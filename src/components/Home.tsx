@@ -44,8 +44,8 @@ export function Home() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-6">
-          <div className="flex w-full flex-col gap-5 rounded-xl border border-slate-700 bg-slate-900 p-5 text-white">
+        <div className="flex w-full flex-col gap-6 rounded-xl border border-slate-700 bg-slate-900 p-5 text-white">
+          <section className="flex flex-col gap-5">
             <h2 className="m-0 text-xl font-semibold">Режим построения трактов</h2>
 
             <div className="flex flex-col gap-2">
@@ -104,9 +104,9 @@ export function Home() {
                 </li>
               </ul>
             </div>
-          </div>
+          </section>
 
-          <div className="flex w-full flex-col gap-5 rounded-xl border border-slate-700 bg-slate-900 p-5 text-white">
+          <section className="flex flex-col gap-5">
             <h2 className="m-0 text-xl font-semibold">Режим слияния трактов</h2>
 
             <div className="flex flex-col gap-2">
@@ -157,7 +157,7 @@ export function Home() {
                 </li>
               </ul>
             </div>
-          </div>
+          </section>
         </div>
       </div>
 

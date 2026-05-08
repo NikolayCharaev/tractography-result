@@ -32,7 +32,7 @@ export function Home() {
 
 
       <div className="mt-5">
-        <div className="flex items-stretch gap-4">
+        <div className="flex items-stretch flex-col lg:flex-row gap-4">
           <div className="flex w-full flex-col items-stretch gap-4 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 p-4 md:items-center">
             <video
               className="h-full w-full rounded-lg border border-slate-700 bg-slate-950"

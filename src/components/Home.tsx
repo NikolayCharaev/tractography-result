@@ -53,113 +53,72 @@ export function Home() {
             <div className="flex flex-col gap-2">
               <h3 className="m-0 text-base font-semibold text-blue-300">Входные данные</h3>
               <p className="m-0 wrap-break-word leading-6">
-                Входные файлы расположены в папке{" "}
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  /input/for-new-tract
-                </code>
-                . Это исходные DWI-данные, по которым строится трактограмма.
+                Это исходные DWI-данные, по которым строится трактограмма.
               </p>
             </div>
 
             <div className="flex flex-col gap-2">
               <h3 className="m-0 text-base font-semibold text-blue-300">Выходные данные</h3>
-              <p className="m-0 wrap-break-word leading-6">
-                После работы скрипта{" "}
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  build_tract.sh
-                </code>{" "}
-                результаты сохраняются в папку{" "}
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  /output
-                </code>{" "}
-                и упаковываются в архив:
-              </p>
+              
               <ul className="m-0 flex list-disc flex-col gap-1.5 wrap-break-word pl-5 leading-6">
                 <li>
-                  <span className="font-semibold text-blue-200">Tractogram_A.trk</span> —
-                  построенная трактограмма в формате TrackVis.
+                  <span className="font-semibold text-blue-200">Tractogram_A.trk</span> -
+                  Построенная трактограмма в формате TrackVis.
                 </li>
                 <li>
-                  <span className="font-semibold text-blue-200">Tractogram_A.tck</span> —
-                  конвертированная трактограмма для просмотра в{" "}
-                  <span className="font-mono">mrview</span> из пакета MRTrix3.
+                  <span className="font-semibold text-blue-200">Tractogram_A.tck</span> -
+                  Сконвертированная трактограмма для просмотра в mrview пакета{" "}
+                  <a
+                    className="text-blue-300 hover:underline"
+                    href="https://mrtrix.readthedocs.io/en/latest/installation/package_install.html"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    MRTrix3
+                  </a>
+                  .
                 </li>
                 <li>
-                  <span className="font-semibold text-blue-200">Tractogram_A.glb</span> — 3D-модель
-                  трактограммы в формате glb/glTF.
+                  <span className="font-semibold text-blue-200">Tractogram_A.glb</span> -
+                  3D-модель трактограммы в формате glb/glTF.
                 </li>
                 <li>
-                  <span className="font-semibold text-blue-200">Corrected_DWI.nii.gz</span> —
+                  <span className="font-semibold text-blue-200">Corrected_DWI.nii.gz</span> -
                   скорректированный входной DWI-файл (устранение искажений и токов Фуко).
                 </li>
                 <li>
-                  <span className="font-semibold text-blue-200">Brain_mask.nii.gz</span> — маска
+                  <span className="font-semibold text-blue-200">Brain_mask.nii.gz</span> - маска
                   мозга.
                 </li>
                 <li>
-                  <span className="font-semibold text-blue-200">Карты:</span>{" "}
-                  <span className="break-all font-mono text-sm text-blue-200">
-                    FA.nii.gz, MD.nii.gz, ADC.nii.gz, Trace.nii.gz, AD.nii.gz, RD.nii.gz,
-                    b0_map.nii.gz
-                  </span>
-                  .
+                  <span className="font-semibold text-blue-200">Карты:</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">FA.nii.gz</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">MD.nii.gz</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">ADC.nii.gz</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">Trace.nii.gz</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">AD.nii.gz</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">RD.nii.gz</span>
+                </li>
+                <li>
+                  <span className="font-semibold text-blue-200">b0_map.nii.gz</span>
                 </li>
               </ul>
             </div>
           </section>
 
-          <section className="flex flex-col gap-4 sm:gap-5">
-            <h2 className="m-0 text-lg font-semibold sm:text-xl">Режим слияния трактов</h2>
-
-            <div className="flex flex-col gap-2">
-              <h3 className="m-0 text-base font-semibold text-blue-300">Входные данные</h3>
-              <p className="m-0 wrap-break-word leading-6">
-                Входные файлы расположены в папке{" "}
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  /input/merging-tracts
-                </code>
-                . Это набор ранее построенных трактограмм в формате TrackVis (
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  .trk
-                </code>
-                ), которые требуется объединить в одну.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <h3 className="m-0 text-base font-semibold text-blue-300">Выходные данные</h3>
-              <p className="m-0 wrap-break-word leading-6">
-                После работы скрипта{" "}
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  merge_tract.sh
-                </code>{" "}
-                результаты сохраняются в папку{" "}
-                <code className="break-all rounded bg-slate-800 px-1.5 py-0.5 text-sm text-blue-200">
-                  /output
-                </code>{" "}
-                и упаковываются в архив:
-              </p>
-              <ul className="m-0 flex list-disc flex-col gap-1.5 wrap-break-word pl-5 leading-6">
-                <li>
-                  <span className="font-semibold text-blue-200">Combined_Tractography.trk</span> —
-                  основной файл с результатами слияния трактограмм.
-                </li>
-                <li>
-                  <span className="font-semibold text-blue-200">Combined_Tractography.tck</span> —
-                  конвертированная версия TRK-файла для просмотра в утилите{" "}
-                  <span className="font-mono">mrview</span> из пакета MRTrix3.
-                </li>
-                <li>
-                  <span className="font-semibold text-blue-200">Tract_Density_Map.nii.gz</span> —
-                  карта плотности трактов.
-                </li>
-                <li>
-                  <span className="font-semibold text-blue-200">Merging_Summary.json</span> —
-                  сводка по результатам слияния.
-                </li>
-              </ul>
-            </div>
-          </section>
+          
         </div>
       </div>
     </section>

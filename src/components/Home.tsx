@@ -1,5 +1,5 @@
 import { Info } from 'lucide-react'
-import { HoverCard, HoverCardTrigger, HoverCardContent, Button } from '../../components/index'
+import { HoverCard, HoverCardTrigger, HoverCardContent, Button, TractographyList } from '@/components/index'
 import { TractsInfo } from './TracktsInfo';
 
 
@@ -12,7 +12,7 @@ export function Home() {
       <div className="flex items-center justify-between">
         <a
           className="w-fit font-semibold text-blue-400 no-underline hover:underline"
-          href="https://disk.yandex.ru/d/HGIdIayyJ0wChw"
+          href="https://drive.google.com/file/d/1IUmkEgU5RiU2dNf1P6PTqvQ446pMct19/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
@@ -32,39 +32,7 @@ export function Home() {
 
 
       <div className="mt-5">
-        <div className="flex items-stretch flex-col lg:flex-row gap-4">
-          <div className="flex w-full flex-col items-stretch gap-4 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 p-4 md:items-center">
-            <video
-              className="h-full w-full rounded-lg border border-slate-700 bg-slate-950"
-              src="/2d_demo.gif.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-            />
-            <p className="m-0 text-center leading-6 text-white">
-              Двумерная демонстрация результатов расчёта по данным R7.
-            </p>
-          </div>
-
-          <div className="flex w-full flex-col items-stretch gap-4 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 p-4 md:items-center">
-            <video
-              className="w-full rounded-lg border border-slate-700 bg-slate-950"
-              src="/3d_demo.gif.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-            />
-            <p className="m-0 text-center leading-6 text-white">
-              Трёхмерная модель построения по данным из R7.
-            </p>
-          </div>
-        </div>
-
-
+        <TractographyList/>
       </div>
     </section>
   );

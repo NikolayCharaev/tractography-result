@@ -1,15 +1,13 @@
-import { useId, useRef, useState } from 'react'
-import gsap from 'gsap'
+import { useId, useRef, useState } from "react"
+import gsap from "gsap"
 
-import {
-  tractographyList,
-  type tractographyListTypes,
-} from '../../constants/tractography'
-import { Tabs, TabsList, TabsTrigger } from './tabs'
+import { tractographyList } from "../model/constants"
+import type { tractographyListTypes } from "../model/types"
+import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 
 function prefersReducedMotion(): boolean {
-  if (typeof window === 'undefined') return false
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (typeof window === "undefined") return false
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches
 }
 
 function TractographyPanelBody({ elem }: { elem: tractographyListTypes }) {
@@ -70,7 +68,7 @@ function TractographyListInner() {
       gsap.killTweensOf(panelRef.current)
       setDisplayedTab(next)
       if (panelRef.current) {
-        gsap.set(panelRef.current, { clearProps: 'all' })
+        gsap.set(panelRef.current, { clearProps: "all" })
       }
       return
     }
@@ -88,7 +86,7 @@ function TractographyListInner() {
       autoAlpha: 0,
       y: -10,
       duration: 0.22,
-      ease: 'power2.in',
+      ease: "power2.in",
       onComplete: () => {
         if (animGenerationRef.current !== generation) return
         setDisplayedTab(next)
@@ -103,8 +101,8 @@ function TractographyListInner() {
               autoAlpha: 1,
               y: 0,
               duration: 0.38,
-              ease: 'power3.out',
-              clearProps: 'transform',
+              ease: "power3.out",
+              clearProps: "transform",
             }
           )
         })

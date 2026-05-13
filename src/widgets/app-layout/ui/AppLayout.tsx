@@ -1,5 +1,7 @@
 import type { ReactNode } from "react"
-import { Brain, ExternalLink, House } from "lucide-react"
+import { Brain, Microscope } from "lucide-react"
+import { NavLink } from "react-router-dom"
+
 import {
   Sidebar,
   SidebarContent,
@@ -17,9 +19,6 @@ import {
 } from "@/shared/ui/sidebar"
 import { TooltipProvider } from "@/shared/ui/tooltip"
 
-const ARCHIVE_HREF =
-  "https://drive.google.com/file/d/1IUmkEgU5RiU2dNf1P6PTqvQ446pMct19/view?usp=drive_link"
-
 type AppLayoutProps = {
   children: ReactNode
 }
@@ -33,7 +32,7 @@ export function AppLayout({ children }: AppLayoutProps) {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton size="lg" className="pointer-events-none">
-                  <Brain />
+                  <Microscope />
                   <span>Демонстрация работ</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -41,25 +40,27 @@ export function AppLayout({ children }: AppLayoutProps) {
           </SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
-              <SidebarGroupLabel>Разделы</SidebarGroupLabel>
+              <SidebarGroupLabel>Навигация</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive tooltip="Результаты трактографии">
-                      <a href="/">
-                        <House />
+                    <SidebarMenuButton asChild tooltip="Результаты трактографии">
+                      <NavLink
+                        to="/"
+                        end
+                        className={({ isActive, isPending }) =>
+                          isPending
+                            ? "pending"
+                            : isActive
+                              ? "active"
+                              : ""
+                        }
+                      >
+                        <Brain />
                         <span>Результаты трактографии</span>
-                      </a>
+                      </NavLink>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                  {/* <SidebarMenuItem>
-                    <SidebarMenuButton asChild tooltip="Архив с результатами">
-                      <a href={ARCHIVE_HREF} target="_blank" rel="noreferrer">
-                        <ExternalLink />
-                        <span>Архив с результатами</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem> */}
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>

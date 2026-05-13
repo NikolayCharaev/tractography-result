@@ -121,7 +121,7 @@ function TractographyListInner() {
       onValueChange={handleValueChange}
       className="w-full gap-6"
     >
-      <div className="flex flex-col gap-6 rounded-xl p-6 shadow-md sm:p-10">
+      <div className="flex flex-col gap-6 rounded-xl p-6 border sm:p-10">
         <TabsList className="h-auto w-full flex-wrap justify-start gap-1 sm:w-fit">
           {tractographyList.map((elem, index) => (
             <TabsTrigger

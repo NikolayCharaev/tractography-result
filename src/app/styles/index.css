@@ -133,3 +133,14 @@
     @apply font-sans;
   }
 }
+
+/* React Router NavLink: className={({ isActive, isPending }) => ...} */
+@layer components {
+  [data-sidebar="menu-button"].active {
+    @apply bg-sidebar-accent font-medium text-sidebar-accent-foreground;
+  }
+
+  [data-sidebar="menu-button"].pending {
+    @apply pointer-events-none opacity-60;
+  }
+}

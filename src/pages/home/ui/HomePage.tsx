@@ -9,7 +9,7 @@ const ARCHIVE_HREF =
 
 export function HomePage() {
   return (
-    <section className="container mx-auto gap-6 p-4 sm:p-6 lg:p-8">
+    <section>
       <h1 className="mb-4 text-2xl font-semibold text-black sm:mb-5 sm:text-3xl">
         Визуализация результатов Трактографии
       </h1>

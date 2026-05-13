@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { Brain, Microscope } from "lucide-react"
+import { Microscope } from "lucide-react"
 import { NavLink } from "react-router-dom"
 
 import {
@@ -18,6 +18,7 @@ import {
   SidebarTrigger,
 } from "@/shared/ui/sidebar"
 import { TooltipProvider } from "@/shared/ui/tooltip"
+import { appNavigation } from "../config/navigation"
 
 type AppLayoutProps = {
   children: ReactNode
@@ -43,24 +44,29 @@ export function AppLayout({ children }: AppLayoutProps) {
               <SidebarGroupLabel>Навигация</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild tooltip="Результаты трактографии">
-                      <NavLink
-                        to="/"
-                        end
-                        className={({ isActive, isPending }) =>
-                          isPending
-                            ? "pending"
-                            : isActive
-                              ? "active"
-                              : ""
-                        }
-                      >
-                        <Brain />
-                        <span>Результаты трактографии</span>
-                      </NavLink>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
+                  {appNavigation.map((item) => {
+                    const Icon = item.icon
+                    return (
+                      <SidebarMenuItem key={item.href}>
+                        <SidebarMenuButton asChild tooltip={item.title}>
+                          <NavLink
+                            to={item.href}
+                            end={item.href === "/"}
+                            className={({ isActive, isPending }) =>
+                              isPending
+                                ? "pending"
+                                : isActive
+                                  ? "active"
+                                  : ""
+                            }
+                          >
+                            <Icon />
+                            <span>{item.title}</span>
+                          </NavLink>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    )
+                  })}
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
@@ -71,7 +77,9 @@ export function AppLayout({ children }: AppLayoutProps) {
           <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
             <SidebarTrigger />
           </header>
-          {children}
+          <main className="container mx-auto gap-6 p-4 sm:p-6 lg:p-8">
+            {children}
+          </main>
         </SidebarInset>
       </SidebarProvider>
     </TooltipProvider>

@@ -1,6 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
 import { HomePage } from "@/pages/home"
+import { ProstatePage } from "@/pages/prostate"
+import { PulmonaryVeinSegmentationPage } from "@/pages/pulmonary-vein-segmentation/ui/PulmonaryVeinSegmentationPage"
 import { AppLayout } from "@/widgets/app-layout"
 
 function App() {
@@ -9,7 +11,11 @@ function App() {
       <AppLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/pulmonary-vein-segmentation" element={<>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe officiis, culpa praesentium unde ex blanditiis nam mollitia reprehenderit veniam veritatis, repudiandae ipsum perspiciatis maiores dignissimos molestias sed. Exercitationem, veniam iste!</>} />
+          <Route
+            path="/pulmonary-vein-segmentation"
+            element={<PulmonaryVeinSegmentationPage />}
+          />
+          <Route path="/prostate" element={<ProstatePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AppLayout>

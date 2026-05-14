@@ -1,0 +1,2 @@
+T2W: series=16, plane=axial, shape=320x320, spacing=(0.78125, 0.78125), slice_thickness=1.0, slice_spacing=1.0000000000001705, origin=(-140.1963701242, -88.373188704986, 39.191416391443)
+ADC: series=9, plane=axial, shape=112x112, spacing=(1.7857142686844, 1.7857142686844), slice_thickness=3.5, slice_spacing=3.500000231427837, origin=(-115.19636917114, -67.319194686165, 28.896358335271)

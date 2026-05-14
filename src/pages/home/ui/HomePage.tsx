@@ -3,6 +3,7 @@ import { Info } from "lucide-react"
 import { TractographyList, TractsInfo } from "@/entities/tractography"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/ui/hover-card"
 import { Button } from "@/shared/ui/button"
+import { Title } from "@/shared/ui/title"
 
 const ARCHIVE_HREF =
   "https://drive.google.com/file/d/1IUmkEgU5RiU2dNf1P6PTqvQ446pMct19/view?usp=drive_link"
@@ -10,9 +11,7 @@ const ARCHIVE_HREF =
 export function HomePage() {
   return (
     <section>
-      <h1 className="mb-4 text-2xl font-semibold text-black sm:mb-5 sm:text-3xl">
-        Визуализация результатов Трактографии
-      </h1>
+      <Title>Визуализация результатов Трактографии</Title>
       <div className="flex items-center justify-between">
         <a
           className="w-fit font-semibold text-blue-400 no-underline hover:underline"
@@ -29,7 +28,7 @@ export function HomePage() {
               <Info />
             </Button>
           </HoverCardTrigger>
-          <HoverCardContent className="w-100">
+          <HoverCardContent side="left" className="w-100">
             <TractsInfo />
           </HoverCardContent>
         </HoverCard>

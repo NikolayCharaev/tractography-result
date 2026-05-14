@@ -1,0 +1,131 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 40
+  Lesions detected      : 13
+  Maximum PI-RADS score : 5
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 5
+    Zone     : PZ
+    Slice    : 37  (spans 4 slices)
+    Size     : 12 × 7 mm
+    ADC      : 376 µm²/s
+    Area     : 60.4 mm²
+    Detail   : Focal markedly low ADC ≥15 mm
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 12  (spans 5 slices)
+    Size     : 28 × 14 mm
+    ADC      : 920 µm²/s
+    Area     : 254.1 mm²
+    Detail   : Moderate ADC restriction in TZ, large
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 11  (spans 6 slices)
+    Size     : 23 × 16 mm
+    ADC      : 934 µm²/s
+    Area     : 222.5 mm²
+    Detail   : Moderate ADC restriction in TZ, large
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 22
+    Size     : 14 × 7 mm
+    ADC      : 552 µm²/s
+    Area     : 70.0 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 21
+    Size     : 7 × 6 mm
+    ADC      : 688 µm²/s
+    Area     : 33.0 mm²
+    Detail   : Focal low ADC
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 40
+    Size     : 6 × 6 mm
+    ADC      : 434 µm²/s
+    Area     : 33.0 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 7:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 22  (spans 2 slices)
+    Size     : 8 × 5 mm
+    ADC      : 683 µm²/s
+    Area     : 31.6 mm²
+    Detail   : Focal low ADC
+
+  Lesion 8:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 27
+    Size     : 6 × 5 mm
+    ADC      : 410 µm²/s
+    Area     : 24.7 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 9:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 15  (spans 6 slices)
+    Size     : 20 × 14 mm
+    ADC      : 958 µm²/s
+    Area     : 190.9 mm²
+    Detail   : Moderate ADC restriction
+
+  Lesion 10:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 2  (spans 5 slices)
+    Size     : 29 × 7 mm
+    ADC      : 1008 µm²/s
+    Area     : 114.0 mm²
+    Detail   : Heterogeneous TZ, mild restriction
+
+  Lesion 11:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 7
+    Size     : 11 × 8 mm
+    ADC      : 918 µm²/s
+    Area     : 67.3 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 12:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 12  (spans 3 slices)
+    Size     : 12 × 5 mm
+    ADC      : 892 µm²/s
+    Area     : 50.8 mm²
+    Detail   : Moderate ADC restriction
+
+  Lesion 13:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 1  (spans 2 slices)
+    Size     : 7 × 6 mm
+    ADC      : 776 µm²/s
+    Area     : 31.6 mm²
+    Detail   : Moderate ADC restriction
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

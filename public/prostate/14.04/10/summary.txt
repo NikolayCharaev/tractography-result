@@ -1,0 +1,86 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 29
+  Lesions detected      : 8
+  Maximum PI-RADS score : 5
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 5
+    Zone     : PZ
+    Slice    : 24  (spans 6 slices)
+    Size     : 62 × 34 mm
+    ADC      : 290 µm²/s
+    Area     : 770.5 mm²
+    Detail   : Focal markedly low ADC ≥15 mm
+
+  Lesion 2:
+    PI-RADS  : 5
+    Zone     : PZ
+    Slice    : 15  (spans 6 slices)
+    Size     : 61 × 31 mm
+    ADC      : 501 µm²/s
+    Area     : 558.6 mm²
+    Detail   : Focal markedly low ADC ≥15 mm
+
+  Lesion 3:
+    PI-RADS  : 5
+    Zone     : PZ
+    Slice    : 8  (spans 6 slices)
+    Size     : 36 × 25 mm
+    ADC      : 482 µm²/s
+    Area     : 489.7 mm²
+    Detail   : Focal markedly low ADC ≥15 mm
+
+  Lesion 4:
+    PI-RADS  : 5
+    Zone     : PZ
+    Slice    : 1  (spans 6 slices)
+    Size     : 29 × 15 mm
+    ADC      : 542 µm²/s
+    Area     : 227.2 mm²
+    Detail   : Focal markedly low ADC ≥15 mm
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 27  (spans 5 slices)
+    Size     : 55 × 18 mm
+    ADC      : 718 µm²/s
+    Area     : 646.9 mm²
+    Detail   : Focal low ADC
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 8  (spans 2 slices)
+    Size     : 35 × 17 mm
+    ADC      : 619 µm²/s
+    Area     : 246.1 mm²
+    Detail   : Focal low ADC
+
+  Lesion 7:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 20
+    Size     : 14 × 5 mm
+    ADC      : 600 µm²/s
+    Area     : 39.8 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 8:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 29  (spans 4 slices)
+    Size     : 20 × 9 mm
+    ADC      : 892 µm²/s
+    Area     : 123.9 mm²
+    Detail   : Moderate ADC restriction
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

@@ -7,7 +7,7 @@ export function PulmonaryVeinSegmentationPage() {
 
       <div className="mt-5">
         <div className="p-6 border rounded-xl">
-          <img src="/public/pulmonary-vein-segmentation/vein.png" className="rounded-xl" />
+          <img src="pulmonary-vein-segmentation/vein.png" className="rounded-xl" />
         </div>
       </div>
     </section>

@@ -26,7 +26,7 @@ type AppLayoutProps = {
 
 export function AppLayout({ children }: AppLayoutProps) {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0} skipDelayDuration={0}>
       <SidebarProvider>
         <Sidebar>
           <SidebarHeader>
@@ -48,8 +48,13 @@ export function AppLayout({ children }: AppLayoutProps) {
                     const Icon = item.icon
                     return (
                       <SidebarMenuItem key={item.href}>
-                        <SidebarMenuButton asChild tooltip={item.title}>
+                        <SidebarMenuButton
+                          asChild
+                          tooltip={item.title}
+                          tooltipWhenExpanded={item.tooltip}
+                        >
                           <NavLink
+
                             to={item.href}
                             end={item.href === "/"}
                             className={({ isActive, isPending }) =>
@@ -77,7 +82,7 @@ export function AppLayout({ children }: AppLayoutProps) {
           <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
             <SidebarTrigger />
           </header>
-          <main className="container mx-auto gap-6 p-4 sm:p-6 lg:p-8">
+          <main className="container mx-auto min-w-0 w-full gap-6 p-4 sm:p-6 lg:p-8">
             {children}
           </main>
         </SidebarInset>

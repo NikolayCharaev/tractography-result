@@ -6,6 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 .container { 
+  width: 100%;
+  min-width: 0;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -133,6 +135,8 @@
     @apply font-sans;
   }
 }
+
+
 
 /* React Router NavLink: className={({ isActive, isPending }) => ...} */
 @layer components {

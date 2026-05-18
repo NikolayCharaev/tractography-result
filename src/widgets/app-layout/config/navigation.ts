@@ -1,26 +1,35 @@
-import type { LucideIcon } from "lucide-react"
-import { Activity, Brain, Wind } from "lucide-react"
+import type { LucideIcon } from 'lucide-react';
+import { Activity, Bone, Brain, Wind } from 'lucide-react';
 
 export type AppNavigationItem = {
-  icon: LucideIcon
-  title: string
-  href: string
-}
+  icon: LucideIcon;
+  title: string;
+  href: string;
+  tooltip?: boolean;
+};
 
 export const appNavigation: AppNavigationItem[] = [
   {
     icon: Brain,
-    title: "Результаты трактографии",
-    href: "/",
+    title: 'Трактография (38 задача)',
+    href: '/',
   },
   {
     icon: Wind,
-    title: "Сегментация вен лёгких",
-    href: "/pulmonary-vein-segmentation",
+    title: 'Сегментация вен лёгких ',
+    href: '/pulmonary-vein-segmentation',
   },
   {
     icon: Activity,
-    title: "Предстательная железа",
-    href: "/prostate",
+    title: 'Предстательная железа (50 задача)',
+    href: '/prostate',
+    tooltip: true
   },
-]
+
+  {
+    icon: Bone,
+    title: 'Инородные тела в грудной клетке',
+    href: '/foreign-bodies',
+    tooltip: true,
+  },
+];

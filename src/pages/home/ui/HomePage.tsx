@@ -11,7 +11,7 @@ const ARCHIVE_HREF =
 export function HomePage() {
   return (
     <section>
-      <Title>Визуализация результатов Трактографии</Title>
+      <Title>Трактография</Title>
       <div className="flex items-center justify-between">
         <a
           className="w-fit font-semibold text-blue-400 no-underline hover:underline"
@@ -35,6 +35,7 @@ export function HomePage() {
       </div>
 
       <div className="mt-5">
+      <Title>Визуализация результатов Трактографии</Title>
         <TractographyList />
       </div>
     </section>

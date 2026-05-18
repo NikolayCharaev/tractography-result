@@ -3,7 +3,7 @@ import { Title } from "@/shared/ui/title";
 export function PulmonaryVeinSegmentationPage() {
   return (
     <section>
-      <Title>Сегментация вен лёгких</Title>
+      <Title>Визуализация вен лёгких</Title>
 
       <div className="mt-5">
         <div className="p-6 border rounded-xl">

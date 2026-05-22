@@ -23,13 +23,16 @@ export const appNavigation: AppNavigationItem[] = [
     icon: Activity,
     title: 'Предстательная железа (50 задача)',
     href: '/prostate',
-    tooltip: true
   },
 
   {
     icon: Bone,
     title: 'Инородные тела в грудной клетке',
-    href: '/foreign-bodies',
-    tooltip: true,
+    href: '/foreign-bodies-breast',
+  },
+  {
+    icon: Bone,
+    title: 'Инородные тела в тазовой области',
+    href: '/foreign-bodies-hip',
   },
 ];

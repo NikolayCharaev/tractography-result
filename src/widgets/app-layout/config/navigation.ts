@@ -1,8 +1,8 @@
 import type { LucideIcon } from 'lucide-react';
-import { Activity, Bone, Brain, Wind } from 'lucide-react';
+import { Atom } from 'lucide-react';
 
 export type AppNavigationItem = {
-  icon: LucideIcon;
+  icon?: LucideIcon;
   title: string;
   href: string;
   tooltip?: boolean;
@@ -10,28 +10,33 @@ export type AppNavigationItem = {
 
 export const appNavigation: AppNavigationItem[] = [
   {
-    icon: Brain,
+    icon: Atom,
     title: 'Трактография (38 задача)',
     href: '/',
   },
   {
-    icon: Wind,
+    icon: Atom,
     title: 'Сегментация вен лёгких ',
     href: '/pulmonary-vein-segmentation',
   },
   {
-    icon: Activity,
+    icon: Atom,
+    title: 'Сегментация молочной железы',
+    href: '/breast-segmentation',
+  },
+  {
+    icon: Atom,
     title: 'Предстательная железа (50 задача)',
     href: '/prostate',
   },
 
   {
-    icon: Bone,
+    icon: Atom,
     title: 'Инородные тела в грудной клетке',
     href: '/foreign-bodies-breast',
   },
   {
-    icon: Bone,
+    icon: Atom,
     title: 'Инородные тела в тазовой области',
     href: '/foreign-bodies-hip',
   },

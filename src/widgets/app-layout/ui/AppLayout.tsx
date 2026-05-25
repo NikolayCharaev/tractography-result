@@ -45,7 +45,7 @@ export function AppLayout({ children }: AppLayoutProps) {
               <SidebarGroupContent>
                 <SidebarMenu>
                   {appNavigation.map((item) => {
-                    const Icon = item.icon
+                    const Icon = item?.icon
                     return (
                       <SidebarMenuItem key={item.href}>
                         <SidebarMenuButton
@@ -65,7 +65,8 @@ export function AppLayout({ children }: AppLayoutProps) {
                                   : ""
                             }
                           >
-                            <Icon />
+                            {Icon && <Icon />}
+
                             <span>{item.title}</span>
                           </NavLink>
                         </SidebarMenuButton>

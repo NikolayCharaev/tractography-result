@@ -6,6 +6,7 @@ import { PulmonaryVeinSegmentationPage } from "@/pages/pulmonary-vein-segmentati
 import { AppLayout } from "@/widgets/app-layout"
 import { ForeignBodiesBreast } from "@/pages/foreign-bodies-breast/ui/ForeignBodiesBreast"
 import { ForeignBodiesHip } from "@/pages/foreign-bodies-hip/ui/ForeignBodiesHip"
+import { BreastSegmentation } from "@/pages/breast-segmentation"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           />
           <Route path="/prostate" element={<ProstatePage />} />
           <Route path="/foreign-bodies-breast" element={<ForeignBodiesBreast />} />
+          <Route path="/breast-segmentation" element={<BreastSegmentation />} />
           <Route path="/foreign-bodies-hip" element={<ForeignBodiesHip />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

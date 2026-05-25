@@ -1,0 +1,66 @@
+{
+  "min_score_used": 3,
+  "total_detections": 517,
+  "significant_lesions_count": 0,
+  "discrete_lesions_count": 0,
+  "discrete_lesions": [],
+  "significant_lesions": [],
+  "pirads_distribution": {},
+  "high_risk_lesions": [],
+  "prostate_mask_used": true,
+  "study_path": "/Users/nikolai/Desktop/ronix/Проект RT/50 задача RT-7/research-result/8/prepared/study_001",
+  "study_summary": {
+    "predicted_pirads": 3,
+    "clinically_significant": true,
+    "max_discrete_score": 0,
+    "best_cluster": null,
+    "fallback_visualization_created": true
+  },
+  "selection_manifest": {
+    "patient_id": "patient_001",
+    "study_id": "study_001",
+    "input_folder": "/Users/nikolai/Desktop/ronix/Проект RT/50 задача RT-7/research-result/8/separated",
+    "t2wi": {
+      "series_uid": "1.2.840.113619.2.44.10795885.14883756.3662.1681894409.777",
+      "series_number": 2,
+      "num_files": 31,
+      "quality_score": 100.0,
+      "validation_errors": [],
+      "path": "t2wi"
+    },
+    "dwi": {
+      "mode": "single_b_fallback",
+      "selected_b_low": 50.0,
+      "selected_b_high": 50.0,
+      "low_path": "dwi_low",
+      "high_path": "dwi_high",
+      "low_series": {
+        "series_uid": "1.2.840.113619.2.44.10795885.14883756.3662.1681894409.779",
+        "series_number": 4,
+        "num_files": 19,
+        "b_values": [
+          50.0
+        ]
+      },
+      "high_series": {
+        "series_uid": "1.2.840.113619.2.44.10795885.14883756.3662.1681894409.779",
+        "series_number": 4,
+        "num_files": 19,
+        "b_values": [
+          50.0
+        ]
+      },
+      "prepared_low_files": 19,
+      "prepared_high_files": 19,
+      "geometry_reason": "fallback: доступна только одна low-b серия, high-b отсутствует",
+      "rank_score": -100.0
+    },
+    "adc": {
+      "path": "adc",
+      "status": "needs_calculation",
+      "series_uid": null,
+      "series_number": null,
+      "num_files": 0
+    }
+  }
+}

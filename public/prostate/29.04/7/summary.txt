@@ -1,0 +1,74 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 30
+  Lesions detected      : 6
+  Maximum PI-RADS score : 4
+
+  Prostate size estimate (from T2 segmentation):
+  --------------------------------------------------------
+    Dimensions: 50.0 x 38.3 x 54.0 mm
+    Volume (mask voxels) : 39.0 ml
+    Volume (ellipsoid)   : 53.8 ml
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 14  (spans 3 slices)
+    Size     : 32 × 24 mm
+    T2 deficit: 0.86
+    Area     : 185.4 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 11  (spans 3 slices)
+    Size     : 32 × 16 mm
+    T2 deficit: 0.82
+    Area     : 173.6 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 15
+    Size     : 27 × 22 mm
+    T2 deficit: 0.92
+    Area     : 138.2 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 12  (spans 2 slices)
+    Size     : 22 × 18 mm
+    T2 deficit: 0.85
+    Area     : 131.2 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 6  (spans 3 slices)
+    Size     : 19 × 12 mm
+    T2 deficit: 0.83
+    Area     : 123.6 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 12  (spans 2 slices)
+    Size     : 17 × 13 mm
+    T2 deficit: 0.92
+    Area     : 111.8 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

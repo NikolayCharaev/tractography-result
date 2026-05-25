@@ -1,0 +1,86 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 55
+  Lesions detected      : 8
+  Maximum PI-RADS score : 5
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 5
+    Zone     : TZ
+    Slice    : 43  (spans 2 slices)
+    Size     : 28 × 22 mm
+    ADC      : 179 µm²/s
+    Area     : 272.3 mm²
+    Detail   : Non-circumscribed marked ADC restriction ≥15 mm
+
+  Lesion 2:
+    PI-RADS  : 5
+    Zone     : PZ
+    Slice    : 44
+    Size     : 22 × 20 mm
+    ADC      : 147 µm²/s
+    Area     : 181.5 mm²
+    Detail   : Focal markedly low ADC ≥15 mm
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 46  (spans 2 slices)
+    Size     : 10 × 6 mm
+    ADC      : 199 µm²/s
+    Area     : 37.1 mm²
+    Detail   : Marked ADC restriction in TZ
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 41
+    Size     : 6 × 6 mm
+    ADC      : 116 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Marked ADC restriction in TZ
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 44
+    Size     : 6 × 6 mm
+    ADC      : 233 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Marked ADC restriction in TZ
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 45
+    Size     : 6 × 6 mm
+    ADC      : 94 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 7:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 46
+    Size     : 6 × 6 mm
+    ADC      : 223 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Marked ADC restriction in TZ
+
+  Lesion 8:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 49
+    Size     : 6 × 6 mm
+    ADC      : 138 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Marked ADC restriction in TZ
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

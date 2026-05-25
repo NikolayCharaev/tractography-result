@@ -1,0 +1,3 @@
+T2W: series=5, plane=axial, shape=512x512, spacing=(0.3906, 0.3906), slice_thickness=3.0, slice_spacing=3.300001669843752, origin=(-84.5111999512, -57.4663734436, -54.5735054016)
+ADC: series=450, plane=axial, shape=256x256, spacing=(1.171900034, 1.171900034), slice_thickness=4.0, slice_spacing=4.400000149242474, origin=(-140.1272736, -127.0717468, -84.6942215)
+DWI: series=7, plane=axial, shape=256x256, spacing=(0.9375, 0.9375), slice_thickness=3.0, slice_spacing=3.3000016698447325, origin=(-104.2744445801, -76.5598220825, -49.7642745972)

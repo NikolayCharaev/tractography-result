@@ -1,0 +1,131 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 46
+  Lesions detected      : 13
+  Maximum PI-RADS score : 4
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 24  (spans 3 slices)
+    Size     : 24 × 22 mm
+    ADC      : 893 µm²/s
+    Area     : 307.1 mm²
+    Detail   : Moderate ADC restriction in TZ, large
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 19  (spans 3 slices)
+    Size     : 31 × 17 mm
+    ADC      : 820 µm²/s
+    Area     : 278.9 mm²
+    Detail   : Moderate ADC restriction, DCE+
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 20
+    Size     : 22 × 20 mm
+    ADC      : 877 µm²/s
+    Area     : 226.8 mm²
+    Detail   : Moderate ADC restriction in TZ, large
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 20
+    Size     : 10 × 10 mm
+    ADC      : 929 µm²/s
+    Area     : 51.0 mm²
+    Detail   : Moderate ADC restriction, DCE+
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 20
+    Size     : 9 × 5 mm
+    ADC      : 1022 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Mild ADC restriction, DCE+
+
+  Lesion 6:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 25  (spans 2 slices)
+    Size     : 21 × 20 mm
+    ADC      : 864 µm²/s
+    Area     : 161.7 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 7:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 22  (spans 3 slices)
+    Size     : 20 × 12 mm
+    ADC      : 854 µm²/s
+    Area     : 120.4 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 8:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 27  (spans 2 slices)
+    Size     : 16 × 7 mm
+    ADC      : 884 µm²/s
+    Area     : 55.3 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 9:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 30
+    Size     : 8 × 7 mm
+    ADC      : 861 µm²/s
+    Area     : 42.3 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 10:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 24
+    Size     : 8 × 6 mm
+    ADC      : 885 µm²/s
+    Area     : 30.4 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 11:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 29  (spans 2 slices)
+    Size     : 8 × 4 mm
+    ADC      : 902 µm²/s
+    Area     : 26.0 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 12:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 23
+    Size     : 6 × 5 mm
+    ADC      : 891 µm²/s
+    Area     : 22.8 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 13:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 16
+    Size     : 7 × 6 mm
+    ADC      : 768 µm²/s
+    Area     : 20.6 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

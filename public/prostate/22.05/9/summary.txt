@@ -1,0 +1,117 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 29
+  Lesions detected      : 9
+  Maximum PI-RADS score : 4
+
+  Prostate size estimate (from T2 segmentation):
+  --------------------------------------------------------
+    Dimensions: 51.9 x 34.4 x 52.8 mm
+    Volume (mask voxels) : 38.9 ml
+    Volume (ellipsoid)   : 49.0 ml
+
+  DCE-кинетика (воксели в пределах простаты):
+  --------------------------------------------------------
+    Интервал фаз   : неизвестен
+    Персистентная (син.) :      0  (  0.0%)
+    Плато       (зел.) :   5098  ( 75.0%)
+    Вымывание   (кр.)  :   1700  ( 25.0%)
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 9  (spans 3 slices)
+    Size     : 31 × 18 mm
+    T2 deficit: 0.89
+    Area     : 157.8 mm²
+    DCE-кривая: Плато  (ПЕ=+152%, поздний наклон=-3%)
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 16  (spans 3 slices)
+    Size     : 16 × 16 mm
+    T2 deficit: 0.87
+    Area     : 103.1 mm²
+    DCE-кривая: Плато  (ПЕ=+105%, поздний наклон=-3%)
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 7
+    Size     : 21 × 11 mm
+    T2 deficit: 0.95
+    Area     : 99.6 mm²
+    DCE-кривая: Плато  (ПЕ=+203%, поздний наклон=-2%)
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 15  (spans 3 slices)
+    Size     : 20 × 10 mm
+    T2 deficit: 0.92
+    Area     : 80.1 mm²
+    DCE-кривая: Плато  (ПЕ=+156%, поздний наклон=-3%)
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 14
+    Size     : 12 × 11 mm
+    T2 deficit: 0.77
+    Area     : 42.2 mm²
+    DCE-кривая: Плато  (ПЕ=+159%, поздний наклон=-3%)
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 18
+    Size     : 8 × 5 mm
+    T2 deficit: 0.87
+    Area     : 21.9 mm²
+    DCE-кривая: Плато  (ПЕ=+161%, поздний наклон=-5%)
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 7:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 6
+    Size     : 16 × 8 mm
+    T2 deficit: 0.61
+    Area     : 42.6 mm²
+    DCE-кривая: Плато  (ПЕ=+115%, поздний наклон=-3%)
+    Detail   : Moderate focal T2 hypointensity
+
+  Lesion 8:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 9
+    Size     : 9 × 9 mm
+    T2 deficit: 0.82
+    Area     : 40.2 mm²
+    DCE-кривая: Плато  (ПЕ=+168%, поздний наклон=-3%)
+    Detail   : Moderate focal T2 hypointensity
+
+  Lesion 9:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 7  (spans 2 slices)
+    Size     : 9 × 8 mm
+    T2 deficit: 0.66
+    Area     : 39.1 mm²
+    DCE-кривая: Плато  (ПЕ=+204%, поздний наклон=-8%)
+    Detail   : Moderate focal T2 hypointensity
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

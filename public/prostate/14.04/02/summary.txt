@@ -1,0 +1,95 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 23
+  Lesions detected      : 9
+  Maximum PI-RADS score : 5
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 5
+    Zone     : TZ
+    Slice    : 21  (spans 5 slices)
+    Size     : 44 × 9 mm
+    ADC      : 622 µm²/s
+    Area     : 255.1 mm²
+    Detail   : Low ADC in TZ ≥15 mm
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 7  (spans 5 slices)
+    Size     : 23 × 12 mm
+    ADC      : 732 µm²/s
+    Area     : 204.1 mm²
+    Detail   : Focal low ADC
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 6  (spans 6 slices)
+    Size     : 20 × 16 mm
+    ADC      : 623 µm²/s
+    Area     : 188.1 mm²
+    Detail   : Focal low ADC
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 2  (spans 2 slices)
+    Size     : 9 × 8 mm
+    ADC      : 587 µm²/s
+    Area     : 57.4 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 2
+    Size     : 10 × 7 mm
+    ADC      : 433 µm²/s
+    Area     : 57.4 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 18
+    Size     : 7 × 7 mm
+    ADC      : 469 µm²/s
+    Area     : 41.5 mm²
+    Detail   : Focal markedly low ADC
+
+  Lesion 7:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 18
+    Size     : 7 × 7 mm
+    ADC      : 658 µm²/s
+    Area     : 41.5 mm²
+    Detail   : Focal low ADC
+
+  Lesion 8:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 14  (spans 4 slices)
+    Size     : 24 × 10 mm
+    ADC      : 869 µm²/s
+    Area     : 162.6 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 9:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 19
+    Size     : 10 × 9 mm
+    ADC      : 767 µm²/s
+    Area     : 67.0 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

@@ -1,0 +1,137 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 26
+  Lesions detected      : 13
+  Maximum PI-RADS score : 4
+
+  Prostate size estimate (from T2 segmentation):
+  --------------------------------------------------------
+    Dimensions: 54.3 x 48.8 x 56.1 mm
+    Volume (mask voxels) : 64.1 ml
+    Volume (ellipsoid)   : 77.3 ml
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 8  (spans 2 slices)
+    Size     : 30 × 29 mm
+    T2 deficit: 0.84
+    Area     : 440.6 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 13  (spans 2 slices)
+    Size     : 30 × 18 mm
+    T2 deficit: 0.75
+    Area     : 129.1 mm²
+    Detail   : T2 lesion with concordant ADC-low + DWI-high pattern
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 16  (spans 3 slices)
+    Size     : 34 × 22 mm
+    T2 deficit: 0.88
+    Area     : 123.6 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 4:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 15  (spans 3 slices)
+    Size     : 21 × 9 mm
+    T2 deficit: 0.55
+    Area     : 112.9 mm²
+    Detail   : T2 lesion with concordant ADC-low + DWI-high pattern
+
+  Lesion 5:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 20
+    Size     : 17 × 11 mm
+    T2 deficit: 0.87
+    Area     : 107.9 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 6:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 14  (spans 3 slices)
+    Size     : 27 × 18 mm
+    T2 deficit: 0.90
+    Area     : 106.3 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 7:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 17  (spans 3 slices)
+    Size     : 23 × 14 mm
+    T2 deficit: 0.94
+    Area     : 102.1 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 8:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 10  (spans 2 slices)
+    Size     : 15 × 11 mm
+    T2 deficit: 0.85
+    Area     : 87.9 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 9:
+    PI-RADS  : 4
+    Zone     : PZ
+    Slice    : 7
+    Size     : 18 × 9 mm
+    T2 deficit: 0.45
+    Area     : 65.9 mm²
+    Detail   : T2 lesion with concordant ADC-low + DWI-high pattern
+
+  Lesion 10:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 19
+    Size     : 14 × 7 mm
+    T2 deficit: 0.91
+    Area     : 52.5 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 11:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 18  (spans 2 slices)
+    Size     : 8 × 7 mm
+    T2 deficit: 0.92
+    Area     : 24.0 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 12:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 17
+    Size     : 6 × 6 mm
+    T2 deficit: 0.87
+    Area     : 21.1 mm²
+    Detail   : Atypical markedly hypointense TZ lesion
+
+  Lesion 13:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 7  (spans 2 slices)
+    Size     : 15 × 12 mm
+    T2 deficit: 0.60
+    Area     : 70.2 mm²
+    Detail   : Moderate focal T2 hypointensity
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

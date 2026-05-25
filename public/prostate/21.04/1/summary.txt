@@ -1,0 +1,86 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 46
+  Lesions detected      : 8
+  Maximum PI-RADS score : 4
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 24  (spans 3 slices)
+    Size     : 23 × 21 mm
+    ADC      : 875 µm²/s
+    Area     : 262.6 mm²
+    Detail   : Moderate ADC restriction in TZ, large
+
+  Lesion 2:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 20  (spans 3 slices)
+    Size     : 20 × 20 mm
+    ADC      : 854 µm²/s
+    Area     : 179.0 mm²
+    Detail   : Moderate ADC restriction in TZ, large
+
+  Lesion 3:
+    PI-RADS  : 4
+    Zone     : TZ
+    Slice    : 19  (spans 3 slices)
+    Size     : 18 × 17 mm
+    ADC      : 777 µm²/s
+    Area     : 169.3 mm²
+    Detail   : Low ADC in TZ
+
+  Lesion 4:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 25  (spans 2 slices)
+    Size     : 14 × 14 mm
+    ADC      : 842 µm²/s
+    Area     : 113.9 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 5:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 21  (spans 3 slices)
+    Size     : 12 × 10 mm
+    ADC      : 857 µm²/s
+    Area     : 70.5 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 6:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 27  (spans 2 slices)
+    Size     : 16 × 7 mm
+    ADC      : 884 µm²/s
+    Area     : 55.3 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 7:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 30
+    Size     : 8 × 7 mm
+    ADC      : 864 µm²/s
+    Area     : 40.1 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+  Lesion 8:
+    PI-RADS  : 3
+    Zone     : TZ
+    Slice    : 29  (spans 2 slices)
+    Size     : 8 × 4 mm
+    ADC      : 902 µm²/s
+    Area     : 26.0 mm²
+    Detail   : Heterogeneous TZ with moderate restriction
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

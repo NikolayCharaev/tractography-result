@@ -1,0 +1,23 @@
+============================================================
+  PI-RADS ANALYSIS SUMMARY
+============================================================
+
+  Slices analysed       : 23
+  Lesions detected      : 1
+  Maximum PI-RADS score : 3
+
+  Findings:
+  --------------------------------------------------------
+  Lesion 1:
+    PI-RADS  : 3
+    Zone     : PZ
+    Slice    : 4  (spans 3 slices)
+    Size     : 14 × 9 mm
+    ADC      : 799 µm²/s
+    Area     : 57.4 mm²
+    Detail   : Moderate ADC restriction
+
+============================================================
+  DISCLAIMER: Automated screening tool.
+  Must be reviewed by a qualified radiologist.
+============================================================

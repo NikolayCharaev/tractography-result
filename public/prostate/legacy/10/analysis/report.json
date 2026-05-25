@@ -1,0 +1,257 @@
+{
+  "min_score_used": 3,
+  "total_detections": 521,
+  "significant_lesions_count": 5,
+  "discrete_lesions_count": 3,
+  "discrete_lesions": [
+    {
+      "slice_indices": [
+        12
+      ],
+      "max_score": 3,
+      "cluster_score": 3,
+      "representative_slice": 12,
+      "count_detections": 1,
+      "max_diameter_mm": 2.2810805011544777,
+      "zone": "TZ",
+      "high_score_count": 0
+    },
+    {
+      "slice_indices": [
+        16,
+        17
+      ],
+      "max_score": 4,
+      "cluster_score": 4,
+      "representative_slice": 16,
+      "count_detections": 2,
+      "max_diameter_mm": 3.5451738613585433,
+      "zone": "PZ",
+      "high_score_count": 1
+    },
+    {
+      "slice_indices": [
+        18,
+        19
+      ],
+      "max_score": 4,
+      "cluster_score": 4,
+      "representative_slice": 18,
+      "count_detections": 2,
+      "max_diameter_mm": 4.563708385183852,
+      "zone": "PZ",
+      "high_score_count": 1
+    }
+  ],
+  "significant_lesions": [
+    {
+      "bbox": [
+        290,
+        284,
+        294,
+        289
+      ],
+      "area": 15.0,
+      "mean_adc": 0.7570333480834961,
+      "min_adc": 0.7117500305175781,
+      "adc_p10": 0.721000075340271,
+      "mean_dwi": 0.49722954630851746,
+      "dwi_p90": 0.6229820251464844,
+      "t2_median": 0.22949117422103882,
+      "diameter_mm": 2.2810805011544777,
+      "zone": "TZ",
+      "score": 3,
+      "slice": 12
+    },
+    {
+      "bbox": [
+        218,
+        371,
+        225,
+        380
+      ],
+      "area": 46.0,
+      "mean_adc": 0.7147921919822693,
+      "min_adc": 0.6328750252723694,
+      "adc_p10": 0.6485625505447388,
+      "mean_dwi": 0.6605067253112793,
+      "dwi_p90": 0.9251338839530945,
+      "t2_median": 0.7033581733703613,
+      "diameter_mm": 3.5451738613585433,
+      "zone": "PZ",
+      "score": 4,
+      "slice": 16
+    },
+    {
+      "bbox": [
+        212,
+        368,
+        218,
+        377
+      ],
+      "area": 38.0,
+      "mean_adc": 0.7627023458480835,
+      "min_adc": 0.7248750329017639,
+      "adc_p10": 0.7339875102043152,
+      "mean_dwi": 0.5427781343460083,
+      "dwi_p90": 0.7719317674636841,
+      "t2_median": 0.8761297464370728,
+      "diameter_mm": 3.542905486720467,
+      "zone": "PZ",
+      "score": 3,
+      "slice": 17
+    },
+    {
+      "bbox": [
+        213,
+        145,
+        223,
+        154
+      ],
+      "area": 56.0,
+      "mean_adc": 0.6267533898353577,
+      "min_adc": 0.41456252336502075,
+      "adc_p10": 0.4688437581062317,
+      "mean_dwi": 0.5309773683547974,
+      "dwi_p90": 0.8805251717567444,
+      "t2_median": 0.384512335062027,
+      "diameter_mm": 4.563708385183852,
+      "zone": "PZ",
+      "score": 4,
+      "slice": 18
+    },
+    {
+      "bbox": [
+        225,
+        152,
+        231,
+        161
+      ],
+      "area": 33.0,
+      "mean_adc": 0.5857934951782227,
+      "min_adc": 0.12437500804662704,
+      "adc_p10": 0.3232625126838684,
+      "mean_dwi": 0.4992283880710602,
+      "dwi_p90": 0.7610985040664673,
+      "t2_median": 0.25269395112991333,
+      "diameter_mm": 3.694186633218096,
+      "zone": "PZ",
+      "score": 3,
+      "slice": 19
+    }
+  ],
+  "pirads_distribution": {
+    "3": 3,
+    "4": 2
+  },
+  "high_risk_lesions": [
+    {
+      "bbox": [
+        218,
+        371,
+        225,
+        380
+      ],
+      "area": 46.0,
+      "mean_adc": 0.7147921919822693,
+      "min_adc": 0.6328750252723694,
+      "adc_p10": 0.6485625505447388,
+      "mean_dwi": 0.6605067253112793,
+      "dwi_p90": 0.9251338839530945,
+      "t2_median": 0.7033581733703613,
+      "diameter_mm": 3.5451738613585433,
+      "zone": "PZ",
+      "score": 4,
+      "slice": 16
+    },
+    {
+      "bbox": [
+        213,
+        145,
+        223,
+        154
+      ],
+      "area": 56.0,
+      "mean_adc": 0.6267533898353577,
+      "min_adc": 0.41456252336502075,
+      "adc_p10": 0.4688437581062317,
+      "mean_dwi": 0.5309773683547974,
+      "dwi_p90": 0.8805251717567444,
+      "t2_median": 0.384512335062027,
+      "diameter_mm": 4.563708385183852,
+      "zone": "PZ",
+      "score": 4,
+      "slice": 18
+    }
+  ],
+  "prostate_mask_used": true,
+  "study_path": "/Users/nikolai/Desktop/ronix/Проект RT/50 задача RT-7/research-result/10/prepared/study_001",
+  "study_summary": {
+    "predicted_pirads": 4,
+    "clinically_significant": true,
+    "max_discrete_score": 4,
+    "best_cluster": {
+      "slice_indices": [
+        18,
+        19
+      ],
+      "max_score": 4,
+      "cluster_score": 4,
+      "representative_slice": 18,
+      "count_detections": 2,
+      "max_diameter_mm": 4.563708385183852,
+      "zone": "PZ",
+      "high_score_count": 1
+    },
+    "fallback_visualization_created": false
+  },
+  "selection_manifest": {
+    "patient_id": "patient_001",
+    "study_id": "study_001",
+    "input_folder": "/Users/nikolai/Desktop/ronix/Проект RT/50 задача RT-7/research-result/10/separated",
+    "t2wi": {
+      "series_uid": "1.2.840.113619.2.475.5554020.7670662.29970.1706499340.757",
+      "series_number": 2,
+      "num_files": 28,
+      "quality_score": 100.0,
+      "validation_errors": [],
+      "path": "t2wi"
+    },
+    "dwi": {
+      "mode": "combined",
+      "selected_b_low": 50.0,
+      "selected_b_high": 800.0,
+      "low_path": "dwi_low",
+      "high_path": "dwi_high",
+      "low_series": {
+        "series_uid": "1.2.840.113619.2.475.5554020.7670662.29970.1706499340.762",
+        "series_number": 7,
+        "num_files": 48,
+        "b_values": [
+          50.0,
+          800.0
+        ]
+      },
+      "high_series": {
+        "series_uid": "1.2.840.113619.2.475.5554020.7670662.29970.1706499340.762",
+        "series_number": 7,
+        "num_files": 48,
+        "b_values": [
+          50.0,
+          800.0
+        ]
+      },
+      "prepared_low_files": 24,
+      "prepared_high_files": 24,
+      "geometry_reason": "одинаковые размеры; похожий PixelSpacing; совпадает ориентация; число файлов сопоставимо (48 vs 48)",
+      "rank_score": 12.0
+    },
+    "adc": {
+      "path": "adc",
+      "status": "native",
+      "series_uid": "1.2.840.113619.2.80.0.27091.1706849856.1.13.2",
+      "series_number": 750,
+      "num_files": 24
+    }
+  }
+}

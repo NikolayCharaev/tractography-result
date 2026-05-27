@@ -1,7 +1,9 @@
 import type { ReactNode } from "react"
-import { Microscope } from "lucide-react"
+import { LogOut, Microscope } from "lucide-react"
 import { NavLink } from "react-router-dom"
 
+import { useAuth } from "@/features/app-auth"
+import { Button } from "@/shared/ui/button"
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +27,11 @@ type AppLayoutProps = {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
+  const { isAuthenticated, logout } = useAuth()
+  const visibleNav = appNavigation.filter(
+    (item) => !item.requiresAuth || isAuthenticated,
+  )
+
   return (
     <TooltipProvider delayDuration={0} skipDelayDuration={0}>
       <SidebarProvider>
@@ -44,7 +51,7 @@ export function AppLayout({ children }: AppLayoutProps) {
               <SidebarGroupLabel>Навигация</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
-                  {appNavigation.map((item) => {
+                  {visibleNav.map((item) => {
                     const Icon = item?.icon
                     return (
                       <SidebarMenuItem key={item.href}>
@@ -54,7 +61,6 @@ export function AppLayout({ children }: AppLayoutProps) {
                           tooltipWhenExpanded={item.tooltip}
                         >
                           <NavLink
-
                             to={item.href}
                             end={item.href === "/"}
                             className={({ isActive, isPending }) =>
@@ -80,8 +86,20 @@ export function AppLayout({ children }: AppLayoutProps) {
           <SidebarRail />
         </Sidebar>
         <SidebarInset>
-          <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+          <header className="flex h-14 shrink-0 items-center justify-between gap-2 border-b px-4">
             <SidebarTrigger />
+            {isAuthenticated ? (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => logout()}
+                className="gap-1.5"
+              >
+                <LogOut className="size-4" />
+                Выйти
+              </Button>
+            ) : null}
           </header>
           <main className="container mx-auto min-w-0 w-full gap-6 p-4 sm:p-6 lg:p-8">
             {children}

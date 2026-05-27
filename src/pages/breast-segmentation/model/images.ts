@@ -1,14 +1,44 @@
-const STUDY_ONE_START_SLICE = 354
-const STUDY_TWO_START_SLICE = 361
+/** Имена файлов в `public/breast-segmentation/1/` и `…/2/` (одинаковый набор, порядок как в папке). */
+const BREAST_STUDY_FRAME_FILES = [
+  "breast2_enh_z000.png",
+  "breast2_enh_z002.png",
+  "breast2_enh_z005.png",
+  "breast2_enh_z007.png",
+  "breast2_enh_z048.png",
+  "breast2_enh_z050.png",
+  "breast2_enh_z053.png",
+  "breast2_enh_z055.png",
+  "breast2_enh_z058.png",
+  "breast2_enh_z069.png",
+  "breast2_enh_z072.png",
+  "breast2_enh_z074.png",
+  "breast2_lesion01_kinetics.png",
+  "breast2_lesion02_kinetics.png",
+  "breast2_lesion03_kinetics.png",
+  "breast2_lesion04_kinetics.png",
+  "breast2_lesion05_kinetics.png",
+] as const
 
-export const breastSegmentationOneImages = Array.from(
-  { length: 75 },
-  (_, index) =>
-    `/breast-segmentation/1/14955_slice_${STUDY_ONE_START_SLICE + index}.png`,
+function frameLabel(file: string): string {
+  const lesion = file.match(/lesion(\d+)/)
+  if (lesion) {
+    return `Очаг ${lesion[1]} (кинетика)`
+  }
+  const z = file.match(/_z(\d+)\.png$/)
+  if (z) {
+    return `z${z[1]}`
+  }
+  return file.replace(/\.png$/, "")
+}
+
+export const breastSegmentationOneImages = BREAST_STUDY_FRAME_FILES.map(
+  (file) => `/breast-segmentation/1/${file}`,
 )
 
-export const breastSegmentationTwoImages = Array.from(
-  { length: 65 },
-  (_, index) =>
-    `/breast-segmentation/2/88146_slice_${STUDY_TWO_START_SLICE + index}.png`,
+export const breastSegmentationTwoImages = BREAST_STUDY_FRAME_FILES.map(
+  (file) => `/breast-segmentation/2/${file}`,
+)
+
+export const breastSegmentationFrameLabels = BREAST_STUDY_FRAME_FILES.map(
+  (file) => frameLabel(file),
 )

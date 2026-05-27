@@ -81,7 +81,7 @@ const SHEET_1404_LEGACY =
 
 const report2205: Report = {
   id: '22-05',
-  label: 'Результаты (22.05)',
+  label: 'Результаты (22.05) - вкл. кинетические кривые',
   studies: [
     makeStudy(
       1,

@@ -18,6 +18,7 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
+  useSidebar,
 } from "@/shared/ui/sidebar"
 import { TooltipProvider } from "@/shared/ui/tooltip"
 import { appNavigation } from "../config/navigation"
@@ -35,13 +36,15 @@ export function AppLayout({ children }: AppLayoutProps) {
   return (
     <TooltipProvider delayDuration={0} skipDelayDuration={0}>
       <SidebarProvider>
-        <Sidebar>
+        <Sidebar collapsible="icon">
           <SidebarHeader>
-            <SidebarMenu>
+            <SidebarMenu >
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="pointer-events-none">
+                <SidebarMenuButton size="lg" className="pointer-events-none flex group-data-[state=collapsed]:justify-center">
                   <Microscope />
-                  <span>Демонстрация работ</span>
+                  <span className="group-data-[state=collapsed]:hidden">
+                    Демонстрация работ
+                  </span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

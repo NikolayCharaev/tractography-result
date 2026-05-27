@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 import { Title } from "@/shared/ui/title"
 
 import {
+  breastSegmentationFrameLabels,
   breastSegmentationOneImages,
   breastSegmentationTwoImages,
 } from "../model/images"
@@ -14,13 +15,13 @@ const tabs = [
     id: "1",
     label: "Исследование 1",
     images: breastSegmentationOneImages,
-    startSlice: 354,
+    frameLabels: breastSegmentationFrameLabels,
   },
   {
     id: "2",
     label: "Исследование 2",
     images: breastSegmentationTwoImages,
-    startSlice: 361,
+    frameLabels: breastSegmentationFrameLabels,
   },
 ] as const
 
@@ -46,7 +47,7 @@ export function BreastSegmentation() {
           <TabsContent key={tab.id} value={tab.id} className="mt-2">
             <SegmentationViewer
               images={tab.images}
-              startSlice={tab.startSlice}
+              frameLabels={tab.frameLabels}
             />
           </TabsContent>
         ))}
@@ -57,14 +58,14 @@ export function BreastSegmentation() {
 
 type SegmentationViewerProps = {
   images: string[]
-  startSlice: number
+  frameLabels: readonly string[]
 }
 
-function SegmentationViewer({ images, startSlice }: SegmentationViewerProps) {
+function SegmentationViewer({ images, frameLabels }: SegmentationViewerProps) {
   const [sliceIndex, setSliceIndex] = useState(0)
   const maxIndex = Math.max(images.length - 1, 0)
   const sliderValue = maxIndex - sliceIndex
-  const currentSlice = startSlice + sliceIndex
+  const frameLabel = frameLabels[sliceIndex] ?? `кадр ${sliceIndex + 1}`
 
   if (images.length === 0) {
     return null
@@ -76,8 +77,8 @@ function SegmentationViewer({ images, startSlice }: SegmentationViewerProps) {
         <div className="flex min-w-0 flex-1 flex-col gap-3">
           <div className="flex items-center justify-between gap-4 text-sm text-slate-300">
             <span>
-              Срез{" "}
-              <span className="font-semibold text-white">{currentSlice}</span>
+              Кадр:{" "}
+              <span className="font-semibold text-white">{frameLabel}</span>
             </span>
             <span className="text-slate-400">
               {sliceIndex + 1} / {images.length}
@@ -87,7 +88,7 @@ function SegmentationViewer({ images, startSlice }: SegmentationViewerProps) {
           <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
             <img
               src={images[sliceIndex]}
-              alt={`Срез ${currentSlice}`}
+              alt={frameLabel}
               className="max-h-[min(65dvh,560px)] max-w-full object-contain"
             />
           </div>

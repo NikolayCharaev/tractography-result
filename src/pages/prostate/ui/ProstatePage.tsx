@@ -12,13 +12,13 @@ export function ProstatePage() {
     <section>
       <Title>Поиск очагов в МРТ предстательной железы</Title>
 
-      <Tabs defaultValue={DEFAULT_REPORT_ID} className="w-full gap-6">
-        <TabsList variant="line" className="h-auto w-full flex-wrap justify-start gap-1 mb-30 sm:mb-0">
+      <Tabs  defaultValue={DEFAULT_REPORT_ID} className="w-full gap-6">
+        <TabsList  variant="default" className="h-auto w-full flex-wrap justify-start gap-1 mb-30 sm:mb-0">
           {prostateReports.map((report) => (
             <TabsTrigger
               key={report.id}
               value={report.id}
-              className="flex-initial whitespace-nowrap"
+              className="flex-initial whitespace-nowrap text-[14px]"
             >
               {report.label}
             </TabsTrigger>

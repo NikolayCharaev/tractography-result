@@ -8,6 +8,7 @@ import { AppLayout } from "@/widgets/app-layout"
 import { ForeignBodiesBreast } from "@/pages/foreign-bodies-breast/ui/ForeignBodiesBreast"
 import { ForeignBodiesHip } from "@/pages/foreign-bodies-hip/ui/ForeignBodiesHip"
 import { BreastSegmentation } from "@/pages/breast-segmentation"
+import { HeartSegmentation } from "@/pages/heart-segmentation"
 
 function App() {
   return (
@@ -45,6 +46,15 @@ function App() {
               element={
                 <ProtectedRoute>
                   <BreastSegmentation />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/heart-segmentation"
+              element={
+                <ProtectedRoute>
+                  <HeartSegmentation />
                 </ProtectedRoute>
               }
             />

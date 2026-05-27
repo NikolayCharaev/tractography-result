@@ -9,6 +9,7 @@ import {
 
 import { APP_AUTH_STORAGE_KEY } from "../config"
 import { getExpectedAccessPassword } from "../lib/access-password"
+import { useNavigate } from "react-router-dom"
 
 type AuthContextValue = {
   isAuthenticated: boolean
@@ -29,7 +30,7 @@ function readStoredAuth(): boolean {
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(readStoredAuth)
-
+  const navigate = useNavigate()
   const login = useCallback((password: string) => {
     if (password === getExpectedAccessPassword()) {
       try {
@@ -46,6 +47,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const logout = useCallback(() => {
     try {
       localStorage.removeItem(APP_AUTH_STORAGE_KEY)
+      navigate('/')
     } catch {
       /* ignore */
     }

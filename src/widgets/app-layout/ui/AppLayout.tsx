@@ -1,9 +1,17 @@
 import type { ReactNode } from "react"
-import { LogOut, Microscope } from "lucide-react"
+import { useState } from "react"
+import { LogIn, LogOut, Microscope } from "lucide-react"
 import { NavLink } from "react-router-dom"
 
-import { useAuth } from "@/features/app-auth"
+import { LoginForm, useAuth } from "@/features/app-auth"
 import { Button } from "@/shared/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/shared/ui/dialog"
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +26,6 @@ import {
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-  useSidebar,
 } from "@/shared/ui/sidebar"
 import { TooltipProvider } from "@/shared/ui/tooltip"
 import { appNavigation } from "../config/navigation"
@@ -29,6 +36,7 @@ type AppLayoutProps = {
 
 export function AppLayout({ children }: AppLayoutProps) {
   const { isAuthenticated, logout } = useAuth()
+  const [loginOpen, setLoginOpen] = useState(false)
   const visibleNav = appNavigation.filter(
     (item) => !item.requiresAuth || isAuthenticated,
   )
@@ -91,18 +99,48 @@ export function AppLayout({ children }: AppLayoutProps) {
         <SidebarInset>
           <header className="flex h-14 shrink-0 items-center justify-between gap-2 border-b px-4">
             <SidebarTrigger />
-            {isAuthenticated ? (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={() => logout()}
-                className="gap-1.5"
-              >
-                <LogOut className="size-4" />
-                Выйти
-              </Button>
-            ) : null}
+            <div className="flex items-center gap-2">
+              {isAuthenticated ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => logout()}
+                  className="gap-1.5"
+                >
+                  <LogOut className="size-4" />
+                  Выйти
+                </Button>
+              ) : (
+                <>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="gap-1.5"
+                    onClick={() => setLoginOpen(true)}
+                  >
+                    <LogIn className="size-4" />
+                    Войти
+                  </Button>
+                  <Dialog open={loginOpen} onOpenChange={setLoginOpen}>
+                    <DialogContent className="max-w-md">
+                      <DialogHeader>
+                        <DialogTitle>Вход</DialogTitle>
+                        <DialogDescription>
+                          Введите пароль, чтобы открыть остальные разделы
+                          демонстрации.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <LoginForm
+                        idPrefix="header-login"
+                        onSuccess={() => setLoginOpen(false)}
+                      />
+                    </DialogContent>
+                  </Dialog>
+                </>
+              )}
+            </div>
           </header>
           <main className="container mx-auto min-w-0 w-full gap-6 p-4 sm:p-6 lg:p-8">
             {children}

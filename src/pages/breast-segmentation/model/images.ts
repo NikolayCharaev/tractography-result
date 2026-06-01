@@ -5,7 +5,6 @@ const STUDY_1_FILES = [
   "breast2_enh_z058.png",
 ] as const
 
-const STUDY_2_FILES = ["README.png"] as const
 const STUDY_3_FILES = ["case5_enh_z016.png"] as const
 const STUDY_4_FILES = ["case7_enh_z072.png"] as const
 

@@ -5,18 +5,28 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 import { Title } from "@/shared/ui/title"
 
 import {
-  breastSegmentationFrameLabels,
-  breastSegmentationOneImages,
+  breastSegmentationStudy1,
+  breastSegmentationStudy3,
+  breastSegmentationStudy4,
 } from "../model/images"
 
 const tabs = [
   {
     id: "1",
     label: "Исследование 1",
-    images: breastSegmentationOneImages,
-    frameLabels: breastSegmentationFrameLabels,
+    ...breastSegmentationStudy1,
   },
 
+  {
+    id: "2",
+    label: "Исследование 2",
+    ...breastSegmentationStudy3,
+  },
+  {
+    id: "3",
+    label: "Исследование 3",
+    ...breastSegmentationStudy4,
+  },
 ] as const
 
 export function BreastSegmentation() {
@@ -40,6 +50,7 @@ export function BreastSegmentation() {
         {tabs.map((tab) => (
           <TabsContent key={tab.id} value={tab.id} className="mt-2">
             <SegmentationViewer
+              key={tab.id}
               images={tab.images}
               frameLabels={tab.frameLabels}
             />

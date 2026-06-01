@@ -35,6 +35,7 @@ export type Slice = {
 
 export type StudyImages =
   | { kind: "grid"; slices: Slice[]; highlightedSliceNumber?: number }
+  | { kind: "overview"; src: string }
   | { kind: "empty"; message: string }
   | { kind: "none" }
 
@@ -51,5 +52,7 @@ export type Report = {
   sheetUrl?: string
   modelPanelTitle?: string
   doctorPanelTitle?: string
+  /** Не показывать блок «Заключение ПО» */
+  hideModelConclusion?: boolean
   studies: Study[]
 }

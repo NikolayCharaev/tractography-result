@@ -364,6 +364,38 @@ const report2904: Report = {
   ],
 };
 
+const PROSTATE_0106_FOLDERS: Partial<Record<number, string>> = {
+  1: '01',
+  2: '02',
+  3: '03',
+  4: '04',
+  5: '05',
+  6: '06',
+  7: '07',
+  9: '09',
+};
+
+function prostate0106Images(studyId: number): StudyImages {
+  const folder = PROSTATE_0106_FOLDERS[studyId];
+  if (!folder) {
+    return { kind: 'none' };
+  }
+  return {
+    kind: 'overview',
+    src: `/prostate/01.06/${folder}/result_overview.png`,
+  };
+}
+
+const report0106: Report = {
+  id: '01-06',
+  label: 'Результаты (01.06)',
+  hideModelConclusion: true,
+  studies: report2904.studies.map((study) => ({
+    ...study,
+    images: prostate0106Images(study.id),
+  })),
+};
+
 const report2404: Report = {
   id: '24-04',
   label: 'Результаты (24.04)',
@@ -1134,6 +1166,7 @@ const reportLegacy: Report = {
 };
 
 export const prostateReports: Report[] = [
+  report0106,
   report2205,
   report2904,
   report2404,

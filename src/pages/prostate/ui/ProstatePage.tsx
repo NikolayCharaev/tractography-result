@@ -53,6 +53,7 @@ export function ProstatePage() {
                     study={study}
                     modelPanelTitle={modelTitle}
                     doctorPanelTitle={doctorTitle}
+                    hideModelConclusion={report.hideModelConclusion}
                   />
                 ))}
               </div>

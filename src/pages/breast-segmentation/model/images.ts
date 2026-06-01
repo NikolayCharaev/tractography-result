@@ -1,44 +1,38 @@
-/** Имена файлов в `public/breast-segmentation/1/` и `…/2/` (одинаковый набор, порядок как в папке). */
-const BREAST_STUDY_FRAME_FILES = [
-  "breast2_enh_z000.png",
-  "breast2_enh_z002.png",
-  "breast2_enh_z005.png",
-  "breast2_enh_z007.png",
-  "breast2_enh_z048.png",
+const STUDY_1_FILES = [
   "breast2_enh_z050.png",
   "breast2_enh_z053.png",
   "breast2_enh_z055.png",
   "breast2_enh_z058.png",
-  "breast2_enh_z069.png",
-  "breast2_enh_z072.png",
-  "breast2_enh_z074.png",
-  "breast2_lesion01_kinetics.png",
-  "breast2_lesion02_kinetics.png",
-  "breast2_lesion03_kinetics.png",
-  "breast2_lesion04_kinetics.png",
-  "breast2_lesion05_kinetics.png",
 ] as const
 
+const STUDY_3_FILES = ["case5_enh_z016.png"] as const
+const STUDY_4_FILES = ["case7_enh_z072.png"] as const
+
 function frameLabel(file: string): string {
-  const lesion = file.match(/lesion(\d+)/)
+  if (file.toLowerCase() === "readme.png") {
+    return "README"
+  }
+  const lesion = file.match(/lesion(\d+)/i)
   if (lesion) {
     return `Очаг ${lesion[1]} (кинетика)`
   }
-  const z = file.match(/_z(\d+)\.png$/)
+  const z = file.match(/_z(\d+)\.png$/i)
   if (z) {
     return `z${z[1]}`
   }
-  return file.replace(/\.png$/, "")
+  return file.replace(/\.png$/i, "")
 }
 
-export const breastSegmentationOneImages = BREAST_STUDY_FRAME_FILES.map(
-  (file) => `/breast-segmentation/1/${file}`,
-)
+function studyImages(
+  folder: string,
+  files: readonly string[],
+): { images: string[]; frameLabels: string[] } {
+  const images = files.map((file) => `/breast-segmentation/${folder}/${file}`)
+  const frameLabels = files.map((file) => frameLabel(file))
+  return { images, frameLabels }
+}
 
-export const breastSegmentationTwoImages = BREAST_STUDY_FRAME_FILES.map(
-  (file) => `/breast-segmentation/2/${file}`,
-)
+export const breastSegmentationStudy1 = studyImages("1", STUDY_1_FILES)
 
-export const breastSegmentationFrameLabels = BREAST_STUDY_FRAME_FILES.map(
-  (file) => frameLabel(file),
-)
+export const breastSegmentationStudy3 = studyImages("3", STUDY_3_FILES)
+export const breastSegmentationStudy4 = studyImages("4", STUDY_4_FILES)

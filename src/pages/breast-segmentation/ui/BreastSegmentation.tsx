@@ -7,7 +7,6 @@ import { Title } from "@/shared/ui/title"
 import {
   breastSegmentationFrameLabels,
   breastSegmentationOneImages,
-  breastSegmentationTwoImages,
 } from "../model/images"
 
 const tabs = [
@@ -17,12 +16,7 @@ const tabs = [
     images: breastSegmentationOneImages,
     frameLabels: breastSegmentationFrameLabels,
   },
-  {
-    id: "2",
-    label: "Исследование 2",
-    images: breastSegmentationTwoImages,
-    frameLabels: breastSegmentationFrameLabels,
-  },
+
 ] as const
 
 export function BreastSegmentation() {

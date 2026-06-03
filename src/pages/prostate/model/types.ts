@@ -35,15 +35,23 @@ export type Slice = {
 
 export type StudyImages =
   | { kind: "grid"; slices: Slice[]; highlightedSliceNumber?: number }
-  | { kind: "overview"; src: string }
+  | { kind: "overview"; src: string; secondarySrc?: string }
   | { kind: "empty"; message: string }
   | { kind: "none" }
+
+export type ReportSection = {
+  id: string
+  label: string
+  doctorPanelTitle?: string
+  studies: Study[]
+}
 
 export type Study = {
   id: number
   modelConclusion: ModelConclusion
   doctorText: string
   images: StudyImages
+  imagesPanelTitle?: string
 }
 
 export type Report = {
@@ -54,5 +62,7 @@ export type Report = {
   doctorPanelTitle?: string
   /** Не показывать блок «Заключение ПО» */
   hideModelConclusion?: boolean
-  studies: Study[]
+  studies?: Study[]
+  /** Вложенные табы (например Ronix / RT в отчёте 03.06) */
+  sections?: ReportSection[]
 }

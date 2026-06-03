@@ -45,7 +45,7 @@ export function StudyCard({
 
       {study.images.kind !== "none" ? (
         <div className="mt-4">
-          <Panel title="Изображения срезов">
+          <Panel title={study.imagesPanelTitle ?? "Изображения срезов"}>
             <ImagesContent images={study.images} />
           </Panel>
         </div>
@@ -71,21 +71,22 @@ function Panel({
 
 function ImagesContent({ images }: { images: StudyImages }) {
   if (images.kind === "overview") {
-    return (
-      <a
-        href={images.src}
-        target="_blank"
-        rel="noreferrer"
-        className="block overflow-hidden rounded-xl border border-slate-200 bg-slate-900 no-underline hover:border-slate-300"
-      >
-        <img
-          src={images.src}
-          alt="Обзор результатов"
-          className="max-h-[min(70vh,720px)] w-full object-contain"
-          loading="lazy"
-        />
-      </a>
-    )
+    if (images.secondarySrc) {
+      return (
+        <div className="flex flex-col gap-4">
+          <OverviewImage src={images.src} alt="Обзор результатов" />
+          <OverviewImage
+            src={images.secondarySrc}
+            alt="Срезы с очагами"
+            label="Срезы с очагами"
+          />
+        </div>
+      )
+    }
+    const alt = images.src.includes("result_lesion_slices")
+      ? "Срезы с очагами"
+      : "Обзор результатов"
+    return <OverviewImage src={images.src} alt={alt} />
   }
 
   if (images.kind === "grid") {
@@ -107,4 +108,37 @@ function ImagesContent({ images }: { images: StudyImages }) {
   }
 
   return null
+}
+
+function OverviewImage({
+  src,
+  alt,
+  label,
+}: {
+  src: string
+  alt: string
+  label?: string
+}) {
+  return (
+    <figure className="flex flex-col gap-2">
+      {label ? (
+        <figcaption className="text-sm font-medium text-slate-600">
+          {label}
+        </figcaption>
+      ) : null}
+      <a
+        href={src}
+        target="_blank"
+        rel="noreferrer"
+        className="block overflow-hidden rounded-xl border border-slate-200 bg-slate-900 no-underline hover:border-slate-300"
+      >
+        <img
+          src={src}
+          alt={alt}
+          className="max-h-[min(70vh,720px)] w-full object-contain"
+          loading="lazy"
+        />
+      </a>
+    </figure>
+  )
 }

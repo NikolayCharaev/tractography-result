@@ -1,4 +1,5 @@
 import { NO_DWI_DATA_DESCRIPTION, ONLY_AXIAL_DESCRIPTION, doctorTexts } from './doctor-texts';
+import { report0306 } from './report-0306';
 import type {
   EmptyConclusion,
   LegacyConclusion,
@@ -390,7 +391,7 @@ const report0106: Report = {
   id: '01-06',
   label: 'Результаты (01.06)',
   hideModelConclusion: true,
-  studies: report2904.studies.map((study) => ({
+  studies: (report2904.studies ?? []).map((study) => ({
     ...study,
     images: prostate0106Images(study.id),
   })),
@@ -1166,6 +1167,7 @@ const reportLegacy: Report = {
 };
 
 export const prostateReports: Report[] = [
+  report0306,
   report0106,
   report2205,
   report2904,

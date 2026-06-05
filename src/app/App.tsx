@@ -20,17 +20,13 @@ function App() {
             <Route
               path="/pulmonary-vein-segmentation"
               element={
-                <ProtectedRoute>
-                  <PulmonaryVeinSegmentationPage />
-                </ProtectedRoute>
+                <PulmonaryVeinSegmentationPage />
               }
             />
             <Route
               path="/prostate"
               element={
-                <ProtectedRoute>
-                  <ProstatePage />
-                </ProtectedRoute>
+                <ProstatePage />
               }
             />
             <Route
@@ -44,18 +40,14 @@ function App() {
             <Route
               path="/breast-segmentation"
               element={
-                <ProtectedRoute>
-                  <BreastSegmentation />
-                </ProtectedRoute>
+                <BreastSegmentation />
               }
             />
 
             <Route
               path="/heart-segmentation"
               element={
-                <ProtectedRoute>
-                  <HeartSegmentation />
-                </ProtectedRoute>
+                <HeartSegmentation />
               }
             />
             <Route

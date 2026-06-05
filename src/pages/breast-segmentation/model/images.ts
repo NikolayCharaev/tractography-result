@@ -5,8 +5,11 @@ const STUDY_1_FILES = [
   "breast2_enh_z058.png",
 ] as const
 
+const STUDY_2_FILES = ["case3_fgt_z084.png"] as const
 const STUDY_3_FILES = ["case5_enh_z016.png"] as const
 const STUDY_4_FILES = ["case7_enh_z072.png"] as const
+const STUDY_5_FILES = ["case4_fgt_z019.png"] as const
+const STUDY_6_FILES = ["case9_fgt_z028.png"] as const
 
 function frameLabel(file: string): string {
   if (file.toLowerCase() === "readme.png") {
@@ -33,6 +36,8 @@ function studyImages(
 }
 
 export const breastSegmentationStudy1 = studyImages("1", STUDY_1_FILES)
-
+export const breastSegmentationStudy2 = studyImages("2", STUDY_2_FILES)
 export const breastSegmentationStudy3 = studyImages("3", STUDY_3_FILES)
 export const breastSegmentationStudy4 = studyImages("4", STUDY_4_FILES)
+export const breastSegmentationStudy5 = studyImages("5", STUDY_5_FILES)
+export const breastSegmentationStudy6 = studyImages("6", STUDY_6_FILES)

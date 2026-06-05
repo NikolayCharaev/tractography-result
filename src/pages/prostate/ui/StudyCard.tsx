@@ -83,6 +83,25 @@ function ImagesContent({ images }: { images: StudyImages }) {
         </div>
       )
     }
+    if (images.kineticCurvesSrc) {
+      const lesionAlt = images.src.includes("result_lesion_slices")
+        ? "Срезы с очагами"
+        : "Изображение результата"
+      return (
+        <div className="flex flex-col gap-4">
+          <OverviewImage
+            src={images.src}
+            alt={lesionAlt}
+            label="Срезы с очагами"
+          />
+          <OverviewImage
+            src={images.kineticCurvesSrc}
+            alt="Кинетические кривые"
+            label="Кинетические кривые"
+          />
+        </div>
+      )
+    }
     const alt = images.src.includes("result_lesion_slices")
       ? "Срезы с очагами"
       : "Обзор результатов"

@@ -6,26 +6,43 @@ import { Title } from "@/shared/ui/title"
 
 import {
   breastSegmentationStudy1,
+  breastSegmentationStudy2,
   breastSegmentationStudy3,
   breastSegmentationStudy4,
+  breastSegmentationStudy5,
+  breastSegmentationStudy6,
 } from "../model/images"
 
 const tabs = [
   {
     id: "1",
-    label: "Исследование 1",
+    label: "Исследование 1 (сегментация + очаги)",
     ...breastSegmentationStudy1,
   },
-
   {
     id: "2",
     label: "Исследование 2",
-    ...breastSegmentationStudy3,
+    ...breastSegmentationStudy2,
   },
   {
     id: "3",
     label: "Исследование 3",
+    ...breastSegmentationStudy3,
+  },
+  {
+    id: "4",
+    label: "Исследование 4",
     ...breastSegmentationStudy4,
+  },
+  {
+    id: "5",
+    label: "Исследование 5",
+    ...breastSegmentationStudy5,
+  },
+  {
+    id: "6",
+    label: "Исследование 6",
+    ...breastSegmentationStudy6,
   },
 ] as const
 

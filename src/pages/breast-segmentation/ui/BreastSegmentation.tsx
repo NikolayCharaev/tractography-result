@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 import { Slider } from "@/shared/ui/slider"
+import { ImageMagnifier } from "@/shared/ui/image-magnifier"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 import { Title } from "@/shared/ui/title"
 
@@ -20,8 +21,8 @@ export function BreastSegmentation() {
     <section className="min-w-0">
       <Title>Выявленные очаги в молочной железе</Title>
 
-      <Tabs defaultValue="1" className="mt-5 w-full gap-6">
-        <TabsList variant="line" className="h-auto w-full flex-wrap justify-start gap-1">
+      <Tabs defaultValue="1" className="mt-5 w-full gap-6 ">
+        <TabsList variant="line" className="h-auto w-full flex-wrap justify-start gap-1 max-sm:mb-25">
           {tabs.map((tab) => (
             <TabsTrigger
               key={tab.id}
@@ -77,11 +78,7 @@ function SegmentationViewer({ images, frameLabels }: SegmentationViewerProps) {
           </div>
 
           <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
-            <img
-              src={images[sliceIndex]}
-              alt={frameLabel}
-              className="max-h-[min(65dvh,560px)] max-w-full object-contain"
-            />
+            <ImageMagnifier src={images[sliceIndex]} alt={frameLabel} />
           </div>
         </div>
 

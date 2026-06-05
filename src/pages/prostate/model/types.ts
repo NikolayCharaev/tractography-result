@@ -34,8 +34,18 @@ export type Slice = {
 }
 
 export type StudyImages =
-  | { kind: "grid"; slices: Slice[]; highlightedSliceNumber?: number }
-  | { kind: "overview"; src: string; secondarySrc?: string }
+  | {
+      kind: "grid"
+      slices: Slice[]
+      highlightedSliceNumber?: number
+    }
+  | {
+      kind: "overview"
+      src: string
+      secondarySrc?: string
+      /** Отдельная панель (например обзор с кинетическими кривыми) */
+      kineticCurvesSrc?: string
+    }
   | { kind: "empty"; message: string }
   | { kind: "none" }
 

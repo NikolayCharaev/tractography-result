@@ -4,47 +4,16 @@ import { Slider } from "@/shared/ui/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 import { Title } from "@/shared/ui/title"
 
-import {
-  breastSegmentationStudy1,
-  breastSegmentationStudy2,
-  breastSegmentationStudy3,
-  breastSegmentationStudy4,
-  breastSegmentationStudy5,
-  breastSegmentationStudy6,
-} from "../model/images"
+import { breastSegmentationStudies } from "../model/images"
 
-const tabs = [
-  {
-    id: "1",
-    label: "Исследование 1 (сегментация + очаги)",
-    ...breastSegmentationStudy1,
-  },
-  {
-    id: "2",
-    label: "Исследование 2",
-    ...breastSegmentationStudy2,
-  },
-  {
-    id: "3",
-    label: "Исследование 3",
-    ...breastSegmentationStudy3,
-  },
-  {
-    id: "4",
-    label: "Исследование 4",
-    ...breastSegmentationStudy4,
-  },
-  {
-    id: "5",
-    label: "Исследование 5",
-    ...breastSegmentationStudy5,
-  },
-  {
-    id: "6",
-    label: "Исследование 6",
-    ...breastSegmentationStudy6,
-  },
-] as const
+const tabs = breastSegmentationStudies.map((study, index) => {
+  const id = String(index + 1)
+  return {
+    id,
+    label: `Исследование ${id}`,
+    ...study,
+  }
+})
 
 export function BreastSegmentation() {
   return (
@@ -116,17 +85,19 @@ function SegmentationViewer({ images, frameLabels }: SegmentationViewerProps) {
           </div>
         </div>
 
-        <div className="flex h-[min(65dvh,560px)] w-10 shrink-0 items-center justify-center [&_[data-slot=slider]]:h-full [&_[data-slot=slider]]:w-8 [&_[data-slot=slider]]:flex-col [&_[data-slot=slider-range]]:w-full [&_[data-slot=slider-range]]:bg-slate-400 [&_[data-slot=slider-thumb]]:border-slate-300 [&_[data-slot=slider-thumb]]:bg-white [&_[data-slot=slider-track]]:h-full [&_[data-slot=slider-track]]:w-1.5 [&_[data-slot=slider-track]]:bg-slate-500">
-          <Slider
-            orientation="vertical"
-            value={[sliderValue]}
-            min={0}
-            max={maxIndex}
-            step={1}
-            onValueChange={([value]) => setSliceIndex(maxIndex - value)}
-            aria-label="Переключение срезов"
-          />
-        </div>
+        {maxIndex > 0 ? (
+          <div className="flex h-[min(65dvh,560px)] w-10 shrink-0 items-center justify-center [&_[data-slot=slider]]:h-full [&_[data-slot=slider]]:w-8 [&_[data-slot=slider]]:flex-col [&_[data-slot=slider-range]]:w-full [&_[data-slot=slider-range]]:bg-slate-400 [&_[data-slot=slider-thumb]]:border-slate-300 [&_[data-slot=slider-thumb]]:bg-white [&_[data-slot=slider-track]]:h-full [&_[data-slot=slider-track]]:w-1.5 [&_[data-slot=slider-track]]:bg-slate-500">
+            <Slider
+              orientation="vertical"
+              value={[sliderValue]}
+              min={0}
+              max={maxIndex}
+              step={1}
+              onValueChange={([value]) => setSliceIndex(maxIndex - value)}
+              aria-label="Переключение срезов"
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   )

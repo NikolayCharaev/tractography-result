@@ -1,43 +1,17 @@
-const STUDY_1_FILES = [
-  "breast2_enh_z050.png",
-  "breast2_enh_z053.png",
-  "breast2_enh_z055.png",
-  "breast2_enh_z058.png",
-] as const
-
-const STUDY_2_FILES = ["case3_fgt_z084.png"] as const
-const STUDY_3_FILES = ["case5_enh_z016.png"] as const
-const STUDY_4_FILES = ["case7_enh_z072.png"] as const
-const STUDY_5_FILES = ["case4_fgt_z019.png"] as const
-const STUDY_6_FILES = ["case9_fgt_z028.png"] as const
-
-function frameLabel(file: string): string {
-  if (file.toLowerCase() === "readme.png") {
-    return "README"
-  }
-  const lesion = file.match(/lesion(\d+)/i)
-  if (lesion) {
-    return `Очаг ${lesion[1]} (кинетика)`
-  }
-  const z = file.match(/_z(\d+)\.png$/i)
-  if (z) {
-    return `z${z[1]}`
-  }
-  return file.replace(/\.png$/i, "")
+export type BreastSegmentationStudy = {
+  images: string[]
+  frameLabels: string[]
 }
 
-function studyImages(
-  folder: string,
-  files: readonly string[],
-): { images: string[]; frameLabels: string[] } {
-  const images = files.map((file) => `/breast-segmentation/${folder}/${file}`)
-  const frameLabels = files.map((file) => frameLabel(file))
-  return { images, frameLabels }
+function overlayStudy(id: number): BreastSegmentationStudy {
+  const file = `${id}_overlay.png`
+  return {
+    images: [`/breast-segmentation/${file}`],
+    frameLabels: ["Очаги"],
+  }
 }
 
-export const breastSegmentationStudy1 = studyImages("1", STUDY_1_FILES)
-export const breastSegmentationStudy2 = studyImages("2", STUDY_2_FILES)
-export const breastSegmentationStudy3 = studyImages("3", STUDY_3_FILES)
-export const breastSegmentationStudy4 = studyImages("4", STUDY_4_FILES)
-export const breastSegmentationStudy5 = studyImages("5", STUDY_5_FILES)
-export const breastSegmentationStudy6 = studyImages("6", STUDY_6_FILES)
+export const breastSegmentationStudies: BreastSegmentationStudy[] = Array.from(
+  { length: 10 },
+  (_, index) => overlayStudy(index + 1),
+)

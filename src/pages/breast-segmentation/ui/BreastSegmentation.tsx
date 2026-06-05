@@ -18,7 +18,7 @@ const tabs = breastSegmentationStudies.map((study, index) => {
 export function BreastSegmentation() {
   return (
     <section className="min-w-0">
-      <Title>Сегментация молочной железы</Title>
+      <Title>Выявленные очаги в молочной железе</Title>
 
       <Tabs defaultValue="1" className="mt-5 w-full gap-6">
         <TabsList variant="line" className="h-auto w-full flex-wrap justify-start gap-1">

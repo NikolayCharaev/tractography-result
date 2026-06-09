@@ -1,39 +1,77 @@
 export type BreastSegmentationStudy = {
-  images: string[];
-  frameLabels: string[];
-};
-
-export type BreastSegmentationBatch = {
-  /** значение для Radix Tabs (без точки) */
-  id: string;
-  /** подпись таба, например «05.06» */
-  label: string;
-  studies: BreastSegmentationStudy[];
-};
-
-const STUDY_COUNT = 10;
-
-function overlayStudy(folder: string, studyId: number): BreastSegmentationStudy {
-  const file = `${studyId}_overlay.png`;
-  return {
-    images: [`/breast-segmentation/${folder}/${file}`],
-    frameLabels: ['Очаги'],
-  };
+  overlayImage: string
+  videoSrc?: string
 }
 
-function studiesForFolder(folder: string): BreastSegmentationStudy[] {
-  return Array.from({ length: STUDY_COUNT }, (_, index) => overlayStudy(folder, index + 1));
+export type BreastSegmentationBatch = {
+  id: string
+  label: string
+  studies: BreastSegmentationStudy[]
+}
+
+const STUDY_COUNT = 10
+
+function flatOverlayStudy(batchFolder: string, studyId: number): BreastSegmentationStudy {
+  return {
+    overlayImage: `/breast-segmentation/${batchFolder}/${studyId}_overlay.png`,
+  }
+}
+
+function nestedOverlayStudy(
+  batchFolder: string,
+  studyId: number,
+  videoFile: string,
+): BreastSegmentationStudy {
+  const subfolder = String(studyId)
+  const base = `/breast-segmentation/${batchFolder}/${subfolder}`
+  return {
+    overlayImage: `${base}/${studyId}_overlay.png`,
+    videoSrc: `${base}/${encodeURIComponent(videoFile)}`,
+  }
+}
+
+function flatStudiesForFolder(folder: string): BreastSegmentationStudy[] {
+  return Array.from({ length: STUDY_COUNT }, (_, index) =>
+    flatOverlayStudy(folder, index + 1),
+  )
+}
+
+/** Имена .mov в public/breast-segmentation/08.06/{N}/ */
+const VIDEOS_0806: Record<number, string> = {
+  1: "Запись экрана 2026-06-09 в 11.39.00.mov",
+  2: "Запись экрана 2026-06-09 в 11.41.00.mov",
+  3: "Запись экрана 2026-06-09 в 11.42.31.mov",
+  4: "Запись экрана 2026-06-09 в 11.43.51.mov",
+  5: "Запись экрана 2026-06-09 в 11.45.19.mov",
+  6: "Запись экрана 2026-06-09 в 11.48.05.mov",
+  7: "Запись экрана 2026-06-09 в 11.49.13.mov",
+  8: "Запись экрана 2026-06-09 в 11.55.36.mov",
+  9: "Запись экрана 2026-06-09 в 11.58.54.mov",
+  10: "Запись экрана 2026-06-09 в 12.00.27.mov",
+}
+
+function nestedStudiesFor0806(): BreastSegmentationStudy[] {
+  return Array.from({ length: STUDY_COUNT }, (_, index) => {
+    const studyId = index + 1
+    const videoFile = VIDEOS_0806[studyId]
+    if (!videoFile) {
+      return {
+        overlayImage: `/breast-segmentation/08.06/${studyId}/${studyId}_overlay.png`,
+      }
+    }
+    return nestedOverlayStudy("08.06", studyId, videoFile)
+  })
 }
 
 export const breastSegmentationBatches: BreastSegmentationBatch[] = [
   {
-    id: '08-06',
-    label: 'Результаты (08.06)',
-    studies: studiesForFolder('08.06'),
+    id: "08-06",
+    label: "Результаты (08.06)",
+    studies: nestedStudiesFor0806(),
   },
   {
-    id: '05-06',
-    label: 'Результаты (05.06)',
-    studies: studiesForFolder('05.06'),
+    id: "05-06",
+    label: "Результаты (05.06)",
+    studies: flatStudiesForFolder("05.06"),
   },
-];
+]

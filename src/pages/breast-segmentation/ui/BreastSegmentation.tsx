@@ -1,11 +1,11 @@
-import { useState } from "react"
-
-import { Slider } from "@/shared/ui/slider"
 import { ImageMagnifier } from "@/shared/ui/image-magnifier"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 import { Title } from "@/shared/ui/title"
 
-import { breastSegmentationBatches } from "../model/images"
+import {
+  breastSegmentationBatches,
+  type BreastSegmentationStudy,
+} from "../model/images"
 
 const DEFAULT_BATCH_ID = breastSegmentationBatches[0]?.id ?? ""
 
@@ -48,7 +48,7 @@ function BatchStudies({
   const studyTabs = batch.studies.map((study, index) => ({
     id: String(index + 1),
     label: `Исследование ${index + 1}`,
-    ...study,
+    study,
   }))
 
   return (
@@ -72,8 +72,7 @@ function BatchStudies({
         <TabsContent key={`${batch.id}-${tab.id}`} value={tab.id} className="mt-2">
           <SegmentationViewer
             key={`${batch.id}-${tab.id}`}
-            images={tab.images}
-            frameLabels={tab.frameLabels}
+            study={tab.study}
           />
         </TabsContent>
       ))}
@@ -81,54 +80,33 @@ function BatchStudies({
   )
 }
 
-type SegmentationViewerProps = {
-  images: string[]
-  frameLabels: readonly string[]
-}
-
-function SegmentationViewer({ images, frameLabels }: SegmentationViewerProps) {
-  const [sliceIndex, setSliceIndex] = useState(0)
-  const maxIndex = Math.max(images.length - 1, 0)
-  const sliderValue = maxIndex - sliceIndex
-  const frameLabel = frameLabels[sliceIndex] ?? `кадр ${sliceIndex + 1}`
-
-  if (images.length === 0) {
-    return null
-  }
-
+function SegmentationViewer({ study }: { study: BreastSegmentationStudy }) {
   return (
-    <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
-      <div className="flex min-h-0 items-stretch gap-4 sm:gap-5">
-        <div className="flex min-w-0 flex-1 flex-col gap-3">
-          <div className="flex items-center justify-between gap-4 text-sm text-slate-300">
-            <span>
-              Кадр:{" "}
-              <span className="font-semibold text-white">{frameLabel}</span>
-            </span>
-            <span className="text-slate-400">
-              {sliceIndex + 1} / {images.length}
-            </span>
-          </div>
-
-          <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
-            <ImageMagnifier src={images[sliceIndex]} alt={frameLabel} />
-          </div>
+    <div className="flex min-w-0 flex-col gap-4">
+      <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
+        <div className="mb-3 text-sm text-slate-300">
+          Кадр: <span className="font-semibold text-white">Очаги</span>
         </div>
-
-        {maxIndex > 0 ? (
-          <div className="flex h-[min(65dvh,560px)] w-10 shrink-0 items-center justify-center [&_[data-slot=slider]]:h-full [&_[data-slot=slider]]:w-8 [&_[data-slot=slider]]:flex-col [&_[data-slot=slider-range]]:w-full [&_[data-slot=slider-range]]:bg-slate-400 [&_[data-slot=slider-thumb]]:border-slate-300 [&_[data-slot=slider-thumb]]:bg-white [&_[data-slot=slider-track]]:h-full [&_[data-slot=slider-track]]:w-1.5 [&_[data-slot=slider-track]]:bg-slate-500">
-            <Slider
-              orientation="vertical"
-              value={[sliderValue]}
-              min={0}
-              max={maxIndex}
-              step={1}
-              onValueChange={([value]) => setSliceIndex(maxIndex - value)}
-              aria-label="Переключение срезов"
-            />
-          </div>
-        ) : null}
+        <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
+          <ImageMagnifier src={study.overlayImage} alt="Очаги" />
+        </div>
       </div>
+
+      {study.videoSrc ? (
+        <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
+          <div className="mb-3 text-sm text-slate-300">
+            <span className="font-semibold text-white">Запись экрана</span>
+          </div>
+          <video
+            key={study.videoSrc}
+            src={study.videoSrc}
+            controls
+            playsInline
+            preload="metadata"
+            className="mx-auto max-h-[min(65dvh,560px)] w-full rounded-lg bg-black object-contain"
+          />
+        </div>
+      ) : null}
     </div>
   )
 }

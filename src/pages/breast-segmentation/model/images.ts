@@ -1,5 +1,6 @@
 export type BreastSegmentationStudy = {
   overlayImage: string
+  kineticsImage?: string
   videoSrc?: string
 }
 
@@ -11,11 +12,14 @@ export type BreastSegmentationBatch = {
 
 const STUDY_COUNT = 10
 
-function flatOverlayStudy(batchFolder: string, studyId: number): BreastSegmentationStudy {
-  return {
-    overlayImage: `/breast-segmentation/${batchFolder}/${studyId}_overlay.png`,
-  }
-}
+// function flatOverlayStudy(batchFolder: string, studyId: number): BreastSegmentationStudy {
+//   return {
+//     overlayImage: `/breast-segmentation/${batchFolder}/${studyId}_overlay.png`,
+//   }
+// }
+
+/** Кейсы 08.06, для которых есть {N}_kinetics.png */
+const KINETICS_0806 = new Set([1, 2, 6, 7, 10])
 
 function nestedOverlayStudy(
   batchFolder: string,
@@ -26,15 +30,18 @@ function nestedOverlayStudy(
   const base = `/breast-segmentation/${batchFolder}/${subfolder}`
   return {
     overlayImage: `${base}/${studyId}_overlay.png`,
+    kineticsImage: KINETICS_0806.has(studyId)
+      ? `${base}/${studyId}_kinetics.png`
+      : undefined,
     videoSrc: `${base}/${encodeURIComponent(videoFile)}`,
   }
 }
 
-function flatStudiesForFolder(folder: string): BreastSegmentationStudy[] {
-  return Array.from({ length: STUDY_COUNT }, (_, index) =>
-    flatOverlayStudy(folder, index + 1),
-  )
-}
+// function flatStudiesForFolder(folder: string): BreastSegmentationStudy[] {
+//   return Array.from({ length: STUDY_COUNT }, (_, index) =>
+//     flatOverlayStudy(folder, index + 1),
+//   )
+// }
 
 /** Имена .mov в public/breast-segmentation/08.06/{N}/ */
 const VIDEOS_0806: Record<number, string> = {
@@ -55,8 +62,12 @@ function nestedStudiesFor0806(): BreastSegmentationStudy[] {
     const studyId = index + 1
     const videoFile = VIDEOS_0806[studyId]
     if (!videoFile) {
+      const base = `/breast-segmentation/08.06/${studyId}`
       return {
-        overlayImage: `/breast-segmentation/08.06/${studyId}/${studyId}_overlay.png`,
+        overlayImage: `${base}/${studyId}_overlay.png`,
+        kineticsImage: KINETICS_0806.has(studyId)
+          ? `${base}/${studyId}_kinetics.png`
+          : undefined,
       }
     }
     return nestedOverlayStudy("08.06", studyId, videoFile)
@@ -69,9 +80,9 @@ export const breastSegmentationBatches: BreastSegmentationBatch[] = [
     label: "Результаты (08.06)",
     studies: nestedStudiesFor0806(),
   },
-  {
-    id: "05-06",
-    label: "Результаты (05.06)",
-    studies: flatStudiesForFolder("05.06"),
-  },
+  // {
+  //   id: "05-06",
+  //   label: "Результаты (05.06)",
+  //   studies: flatStudiesForFolder("05.06"),
+  // },
 ]

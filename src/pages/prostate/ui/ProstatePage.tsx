@@ -15,7 +15,7 @@ export function ProstatePage() {
 
       <Tabs defaultValue={DEFAULT_REPORT_ID} className="w-full gap-6">
         <TabsList
-          variant="default"
+        variant="line"
           className="h-auto w-full flex-wrap justify-start gap-1 mb-30 sm:mb-0"
         >
           {prostateReports.map((report) => (

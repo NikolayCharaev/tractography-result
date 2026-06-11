@@ -21,7 +21,7 @@ export function BreastSegmentation() {
         <div className="flex items-center justify-between">
           <TabsList
             variant="line"
-            className="h-auto w-full flex-wrap justify-start gap-1 max-sm:mb-25"
+            className="h-auto w-full flex-wrap justify-start gap-x-1 gap-y-2 pb-1"
           >
             {breastSegmentationBatches.map((batch) => (
               <TabsTrigger

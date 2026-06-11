@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "input_case_dir": "/home/vladimir/picai/picai_bimodal/runs/04.06/old/3/input_case",
+    "segmentation_dir": "/home/vladimir/picai/picai_bimodal/runs/04.06/old/3/segmentation",
+    "detection_dir": "/home/vladimir/picai/picai_bimodal/runs/04.06/old/3/detection",
+    "ref_gland_detection_peak": 0.262939453125,
+    "pirads_min_relative_threshold": 0.08,
+    "min_pirads_like_for_lesion_export": 4,
+    "min_lesion_max_bbox_mm": 5.0,
+    "case_level_likelihood": 0.262939453125,
+    "zone_disclaimer": "PZ/TZ-like labels are geometric hints from whole-gland mask + detection map; not a substitute for zonal MRI segmentation or radiology reading."
+  },
+  "lesions": [
+    {
+      "lesion_id": 1,
+      "volume_ml": 0.042,
+      "zone_label": "Anterior (TZ / AFS-like)",
+      "pirads_like": 5,
+      "max_detection": 0.262939
+    }
+  ]
+}

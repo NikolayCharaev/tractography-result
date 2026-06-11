@@ -6,6 +6,31 @@ type ModelConclusionPanelProps = {
 }
 
 export function ModelConclusionPanel({ conclusion }: ModelConclusionPanelProps) {
+  if (conclusion.kind === "structured") {
+    const tone = conclusion.summaryTone ?? "neutral"
+    return (
+      <div className="space-y-3">
+        <p
+          className={cn(
+            "text-sm font-semibold",
+            tone === "positive" && "text-emerald-700",
+            tone === "neutral" && "text-slate-700",
+            tone === "warning" && "text-amber-800",
+          )}
+        >
+          {conclusion.summary}
+        </p>
+        {conclusion.details.length > 0 ? (
+          <dl className="grid grid-cols-1 gap-x-4 gap-y-2 text-sm">
+            {conclusion.details.map((row) => (
+              <Row key={row.label} label={row.label} value={row.value} />
+            ))}
+          </dl>
+        ) : null}
+      </div>
+    )
+  }
+
   if (conclusion.kind === "significant") {
     return (
       <div className="space-y-3">

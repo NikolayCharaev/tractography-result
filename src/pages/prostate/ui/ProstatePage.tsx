@@ -1,5 +1,11 @@
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, Info } from "lucide-react"
 
+import { Button } from "@/shared/ui/button"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/shared/ui/hover-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/shared/ui/tabs"
 import { Title } from "@/shared/ui/title"
 import { prostateReports } from "../model/reports"
@@ -13,24 +19,46 @@ export function ProstatePage() {
     <section>
       <Title>Поиск очагов в МРТ предстательной железы</Title>
 
-      <Tabs defaultValue={DEFAULT_REPORT_ID} className="w-full gap-6">
-        <TabsList
-        variant="line"
-          className="h-auto w-full flex-wrap justify-start gap-1 mb-30 sm:mb-0"
-        >
-          {prostateReports.map((report) => (
-            <TabsTrigger
-              key={report.id}
-              value={report.id}
-              className="flex-initial whitespace-nowrap text-[14px]"
+      <Tabs defaultValue={DEFAULT_REPORT_ID} className="w-full gap-4 sm:gap-6">
+        <div className="flex items-center justify-between gap-2">
+          <TabsList
+            variant="line"
+            className="h-auto min-w-0 flex-1 flex-wrap justify-start gap-x-1 gap-y-2 pb-1"
+          >
+            {prostateReports.map((report) => (
+              <TabsTrigger
+                key={report.id}
+                value={report.id}
+                className="flex-initial whitespace-nowrap text-[14px]"
+              >
+                {report.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          <HoverCard openDelay={10} closeDelay={100}>
+            <HoverCardTrigger asChild>
+              <Button variant="outline" size="icon" aria-label="Справка по разделу">
+                <Info />
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent
+              side="bottom"
+              align="end"
+              className="w-[min(100vw-2rem,54rem)] p-2"
             >
-              {report.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+              <img
+                src="/prostate/prostate-info.png"
+                alt="Пояснение к разделу поиска очагов в МРТ предстательной железы"
+                className="max-h-[min(75vh,1120px)] w-full rounded-md object-contain"
+                loading="lazy"
+              />
+            </HoverCardContent>
+          </HoverCard>
+        </div>
 
         {prostateReports.map((report) => (
-          <TabsContent key={report.id} value={report.id} className="mt-2">
+          <TabsContent key={report.id} value={report.id} className="mt-4 sm:mt-6">
             <ReportContent report={report} />
           </TabsContent>
         ))}
@@ -50,7 +78,7 @@ function ReportContent({ report }: { report: Report }) {
       <Tabs defaultValue={defaultSectionId} className="w-full gap-4">
         <TabsList
           variant="line"
-          className="h-auto w-full flex-wrap justify-start gap-1"
+          className="h-auto w-full flex-wrap justify-start gap-x-1 gap-y-2 pb-1"
         >
           {report.sections.map((section) => (
             <TabsTrigger
@@ -64,7 +92,7 @@ function ReportContent({ report }: { report: Report }) {
         </TabsList>
 
         {report.sections.map((section) => (
-          <TabsContent key={section.id} value={section.id} className="mt-2">
+          <TabsContent key={section.id} value={section.id} className="mt-4">
             <SectionStudies
               section={section}
               report={report}

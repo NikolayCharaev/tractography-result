@@ -1,0 +1,40 @@
+{
+  "lesion_id": 1,
+  "voxel_count": 1361,
+  "volume_ml": 1.0208,
+  "max_detection": 0.010788,
+  "pirads_like": 5,
+  "bounding_index_zyx": {
+    "zmin": 10,
+    "zmax": 14,
+    "ymin": 134,
+    "ymax": 166,
+    "xmin": 146,
+    "xmax": 182
+  },
+  "bbox_mm_dx_dy_dz": [
+    18.5,
+    16.5,
+    15.0
+  ],
+  "equiv_diameter_mm": 12.49,
+  "centroid_physical_mm_xyz": [
+    -1.65,
+    8.83,
+    54.7
+  ],
+  "zone_label": "Anterior (TZ / AFS-like)",
+  "zone_details": {
+    "method": "geometric_heuristic_v1",
+    "shell_ratio": 0.23,
+    "centroid_offset_y_norm": -0.3175,
+    "note": "Not radiological zonal segmentation; for QC / reporting hints only."
+  },
+  "slices_with_voxels": [
+    10,
+    11,
+    12,
+    13,
+    14
+  ]
+}

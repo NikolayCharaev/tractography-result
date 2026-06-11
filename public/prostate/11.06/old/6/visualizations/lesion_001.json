@@ -1,0 +1,39 @@
+{
+  "lesion_id": 1,
+  "voxel_count": 1033,
+  "volume_ml": 0.7748,
+  "max_detection": 0.032257,
+  "pirads_like": 5,
+  "bounding_index_zyx": {
+    "zmin": 8,
+    "zmax": 11,
+    "ymin": 141,
+    "ymax": 167,
+    "xmin": 218,
+    "xmax": 236
+  },
+  "bbox_mm_dx_dy_dz": [
+    9.5,
+    13.5,
+    12.0
+  ],
+  "equiv_diameter_mm": 11.4,
+  "centroid_physical_mm_xyz": [
+    33.05,
+    30.51,
+    -34.92
+  ],
+  "zone_label": "Mid gland / mixed",
+  "zone_details": {
+    "method": "geometric_heuristic_v1",
+    "shell_ratio": 0.5551,
+    "centroid_offset_y_norm": -0.0489,
+    "note": "Not radiological zonal segmentation; for QC / reporting hints only."
+  },
+  "slices_with_voxels": [
+    8,
+    9,
+    10,
+    11
+  ]
+}

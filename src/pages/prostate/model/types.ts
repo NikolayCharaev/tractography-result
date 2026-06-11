@@ -22,10 +22,19 @@ export type LegacyConclusion = {
   note: string
 }
 
+/** Заключение ПО из экспорта (lesions_summary / lesion_001 и т.п.) */
+export type StructuredConclusion = {
+  kind: "structured"
+  summary: string
+  summaryTone?: "positive" | "neutral" | "warning"
+  details: { label: string; value: string }[]
+}
+
 export type ModelConclusion =
   | SignificantConclusion
   | EmptyConclusion
   | LegacyConclusion
+  | StructuredConclusion
 
 export type Slice = {
   number: number

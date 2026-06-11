@@ -1,0 +1,38 @@
+{
+  "lesion_id": 1,
+  "voxel_count": 486,
+  "volume_ml": 0.3645,
+  "max_detection": 0.401611,
+  "pirads_like": 5,
+  "bounding_index_zyx": {
+    "zmin": 6,
+    "zmax": 8,
+    "ymin": 216,
+    "ymax": 230,
+    "xmin": 204,
+    "xmax": 222
+  },
+  "bbox_mm_dx_dy_dz": [
+    9.5,
+    7.5,
+    9.0
+  ],
+  "equiv_diameter_mm": 8.86,
+  "centroid_physical_mm_xyz": [
+    -4.76,
+    54.35,
+    34.6
+  ],
+  "zone_label": "TZ-like (central)",
+  "zone_details": {
+    "method": "geometric_heuristic_v1",
+    "shell_ratio": 0.7029,
+    "centroid_offset_y_norm": 0.3223,
+    "note": "Not radiological zonal segmentation; for QC / reporting hints only."
+  },
+  "slices_with_voxels": [
+    6,
+    7,
+    8
+  ]
+}

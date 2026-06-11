@@ -1,0 +1,41 @@
+{
+  "lesion_id": 1,
+  "voxel_count": 1087,
+  "volume_ml": 0.8153,
+  "max_detection": 0.01442,
+  "pirads_like": 5,
+  "bounding_index_zyx": {
+    "zmin": 7,
+    "zmax": 12,
+    "ymin": 190,
+    "ymax": 226,
+    "xmin": 153,
+    "xmax": 173
+  },
+  "bbox_mm_dx_dy_dz": [
+    10.5,
+    18.5,
+    18.0
+  ],
+  "equiv_diameter_mm": 11.59,
+  "centroid_physical_mm_xyz": [
+    -33.66,
+    41.76,
+    -79.72
+  ],
+  "zone_label": "Posterior (PZ-like)",
+  "zone_details": {
+    "method": "geometric_heuristic_v1",
+    "shell_ratio": 0.5669,
+    "centroid_offset_y_norm": 0.1931,
+    "note": "Not radiological zonal segmentation; for QC / reporting hints only."
+  },
+  "slices_with_voxels": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ]
+}

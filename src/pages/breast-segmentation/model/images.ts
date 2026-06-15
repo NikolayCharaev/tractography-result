@@ -70,7 +70,7 @@ function nestedStudiesFor0806(): BreastSegmentationStudy[] {
           : undefined,
       }
     }
-    return nestedOverlayStudy("08.06", studyId, videoFile)
+    return nestedOverlayStudy("15.06", studyId, videoFile)
   })
 }
 

@@ -12,36 +12,8 @@ export type BreastSegmentationBatch = {
 
 const STUDY_COUNT = 10
 
-// function flatOverlayStudy(batchFolder: string, studyId: number): BreastSegmentationStudy {
-//   return {
-//     overlayImage: `/breast-segmentation/${batchFolder}/${studyId}_overlay.png`,
-//   }
-// }
-
-/** Кейсы 08.06, для которых есть {N}_kinetics.png */
+/** Кейсы, для которых есть {N}_kinetics.png в 08.06 */
 const KINETICS_0806 = new Set([1, 2, 6, 7, 10])
-
-function nestedOverlayStudy(
-  batchFolder: string,
-  studyId: number,
-  videoFile: string,
-): BreastSegmentationStudy {
-  const subfolder = String(studyId)
-  const base = `/breast-segmentation/${batchFolder}/${subfolder}`
-  return {
-    overlayImage: `${base}/${studyId}_overlay.png`,
-    kineticsImage: KINETICS_0806.has(studyId)
-      ? `${base}/${studyId}_kinetics.png`
-      : undefined,
-    videoSrc: `${base}/${encodeURIComponent(videoFile)}`,
-  }
-}
-
-// function flatStudiesForFolder(folder: string): BreastSegmentationStudy[] {
-//   return Array.from({ length: STUDY_COUNT }, (_, index) =>
-//     flatOverlayStudy(folder, index + 1),
-//   )
-// }
 
 /** Имена .mov в public/breast-segmentation/08.06/{N}/ */
 const VIDEOS_0806: Record<number, string> = {
@@ -57,32 +29,51 @@ const VIDEOS_0806: Record<number, string> = {
   10: "Запись экрана 2026-06-09 в 12.00.27.mov",
 }
 
-function nestedStudiesFor0806(): BreastSegmentationStudy[] {
-  return Array.from({ length: STUDY_COUNT }, (_, index) => {
-    const studyId = index + 1
-    const videoFile = VIDEOS_0806[studyId]
-    if (!videoFile) {
-      const base = `/breast-segmentation/08.06/${studyId}`
-      return {
-        overlayImage: `${base}/${studyId}_overlay.png`,
-        kineticsImage: KINETICS_0806.has(studyId)
-          ? `${base}/${studyId}_kinetics.png`
-          : undefined,
-      }
-    }
-    return nestedOverlayStudy("08.06", studyId, videoFile)
-  })
+type NestedStudyOptions = {
+  /** Папка с {N}_kinetics.png и .mov (по умолчанию — та же, что overlay) */
+  mediaFolder?: string
+}
+
+function nestedOverlayStudy(
+  overlayFolder: string,
+  studyId: number,
+  options: NestedStudyOptions = {},
+): BreastSegmentationStudy {
+  const subfolder = String(studyId)
+  const mediaFolder = options.mediaFolder ?? overlayFolder
+  const overlayBase = `/breast-segmentation/${overlayFolder}/${subfolder}`
+  const mediaBase = `/breast-segmentation/${mediaFolder}/${subfolder}`
+  const videoFile = VIDEOS_0806[studyId]
+
+  return {
+    overlayImage: `${overlayBase}/${studyId}_overlay.png`,
+    kineticsImage: KINETICS_0806.has(studyId)
+      ? `${mediaBase}/${studyId}_kinetics.png`
+      : undefined,
+    videoSrc: videoFile
+      ? `${mediaBase}/${encodeURIComponent(videoFile)}`
+      : undefined,
+  }
+}
+
+function nestedStudiesForFolder(
+  overlayFolder: string,
+  options: NestedStudyOptions = {},
+): BreastSegmentationStudy[] {
+  return Array.from({ length: STUDY_COUNT }, (_, index) =>
+    nestedOverlayStudy(overlayFolder, index + 1, options),
+  )
 }
 
 export const breastSegmentationBatches: BreastSegmentationBatch[] = [
   {
+    id: "15-06",
+    label: "Результаты (15.06)",
+    studies: nestedStudiesForFolder("15.06", { mediaFolder: "08.06" }),
+  },
+  {
     id: "08-06",
     label: "Результаты (08.06)",
-    studies: nestedStudiesFor0806(),
+    studies: nestedStudiesForFolder("08.06"),
   },
-  // {
-  //   id: "05-06",
-  //   label: "Результаты (05.06)",
-  //   studies: flatStudiesForFolder("05.06"),
-  // },
 ]

@@ -2,6 +2,7 @@ import { NO_DWI_DATA_DESCRIPTION, ONLY_AXIAL_DESCRIPTION, doctorTexts } from './
 import { report0306 } from './report-0306';
 import { report0406 } from './report-0406';
 import { report1106 } from './report-1106';
+import { report2206 } from './report-2206';
 import type {
   EmptyConclusion,
   LegacyConclusion,
@@ -1169,6 +1170,7 @@ const reportLegacy: Report = {
 };
 
 export const prostateReports: Report[] = [
+  report2206,
   report1106,
   report0406,
   report0306,

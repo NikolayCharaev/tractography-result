@@ -1,7 +1,10 @@
+import { doctorTexts2606 } from "./doctor-texts-2606"
+
 export type BreastSegmentationStudy = {
   overlayImage: string
   kineticsImage?: string
   videoSrc?: string
+  doctorText?: string
 }
 
 export type BreastSegmentationBatch = {
@@ -39,6 +42,8 @@ type NestedStudyOptions = {
   kineticsStudyIds?: ReadonlySet<number>
   /** Имена .mov по номеру кейса; если не задано — плеер не показывается */
   videoFiles?: Readonly<Record<number, string>>
+  /** Тексты заключений врача по номеру кейса */
+  doctorTexts?: Readonly<Record<number, string>>
 }
 
 function nestedOverlayStudy(
@@ -60,6 +65,7 @@ function nestedOverlayStudy(
     videoSrc: videoFile
       ? `${mediaBase}/${encodeURIComponent(videoFile)}`
       : undefined,
+    doctorText: options.doctorTexts?.[studyId],
   }
 }
 
@@ -79,6 +85,7 @@ export const breastSegmentationBatches: BreastSegmentationBatch[] = [
     studies: nestedStudiesForFolder("26.06", {
       mediaFolder: "26.06",
       kineticsStudyIds: KINETICS_2606,
+      doctorTexts: doctorTexts2606,
     }),
   },
   {

@@ -147,6 +147,17 @@ function SegmentationViewer({ study }: { study: BreastSegmentationStudy }) {
 
   return (
     <div className="flex min-w-0 flex-col gap-4">
+      {study.doctorText ? (
+        <section className="rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5">
+          <h4 className="mb-2 text-base font-semibold text-slate-900">
+            Заключение врача
+          </h4>
+          <p className="whitespace-pre-wrap break-words text-sm leading-relaxed text-slate-700">
+            {study.doctorText}
+          </p>
+        </section>
+      ) : null}
+
       <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
         <div className="mb-3 text-sm text-slate-300">
           Кадр: <span className="font-semibold text-white">Очаги</span>

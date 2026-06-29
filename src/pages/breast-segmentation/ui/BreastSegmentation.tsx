@@ -144,6 +144,7 @@ function BatchStudies({
 }
 
 function SegmentationViewer({ study }: { study: BreastSegmentationStudy }) {
+
   return (
     <div className="flex min-w-0 flex-col gap-4">
       <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
@@ -166,6 +167,7 @@ function SegmentationViewer({ study }: { study: BreastSegmentationStudy }) {
               alt="Кинетические кривые"
             />
           </div>
+
         </div>
       ) : null}
 

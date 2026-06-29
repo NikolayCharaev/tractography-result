@@ -15,6 +15,9 @@ const STUDY_COUNT = 10
 /** Кейсы, для которых есть {N}_kinetics.png в 08.06 */
 const KINETICS_0806 = new Set([1, 2, 6, 7, 10])
 
+/** Кейсы, для которых есть {N}_kinetics.png в 26.06 */
+const KINETICS_2606 = new Set([1, 3, 7, 8])
+
 /** Имена .mov в public/breast-segmentation/08.06/{N}/ */
 const VIDEOS_0806: Record<number, string> = {
   1: "Запись экрана 2026-06-09 в 11.39.00.mov",
@@ -32,6 +35,10 @@ const VIDEOS_0806: Record<number, string> = {
 type NestedStudyOptions = {
   /** Папка с {N}_kinetics.png и .mov (по умолчанию — та же, что overlay) */
   mediaFolder?: string
+  /** Кейсы с {N}_kinetics.png; если не задано — кинетика не показывается */
+  kineticsStudyIds?: ReadonlySet<number>
+  /** Имена .mov по номеру кейса; если не задано — плеер не показывается */
+  videoFiles?: Readonly<Record<number, string>>
 }
 
 function nestedOverlayStudy(
@@ -43,11 +50,11 @@ function nestedOverlayStudy(
   const mediaFolder = options.mediaFolder ?? overlayFolder
   const overlayBase = `/breast-segmentation/${overlayFolder}/${subfolder}`
   const mediaBase = `/breast-segmentation/${mediaFolder}/${subfolder}`
-  const videoFile = VIDEOS_0806[studyId]
+  const videoFile = options.videoFiles?.[studyId]
 
   return {
     overlayImage: `${overlayBase}/${studyId}_overlay.png`,
-    kineticsImage: KINETICS_0806.has(studyId)
+    kineticsImage: options.kineticsStudyIds?.has(studyId)
       ? `${mediaBase}/${studyId}_kinetics.png`
       : undefined,
     videoSrc: videoFile
@@ -67,13 +74,28 @@ function nestedStudiesForFolder(
 
 export const breastSegmentationBatches: BreastSegmentationBatch[] = [
   {
+    id: "26-06",
+    label: "Результаты (26.06) - новые кейсы",
+    studies: nestedStudiesForFolder("26.06", {
+      mediaFolder: "26.06",
+      kineticsStudyIds: KINETICS_2606,
+    }),
+  },
+  {
     id: "15-06",
     label: "Результаты (15.06)",
-    studies: nestedStudiesForFolder("15.06", { mediaFolder: "08.06" }),
+    studies: nestedStudiesForFolder("15.06", {
+      mediaFolder: "08.06",
+      kineticsStudyIds: KINETICS_0806,
+      videoFiles: VIDEOS_0806,
+    }),
   },
   {
     id: "08-06",
     label: "Результаты (08.06)",
-    studies: nestedStudiesForFolder("08.06"),
+    studies: nestedStudiesForFolder("08.06", {
+      kineticsStudyIds: KINETICS_0806,
+      videoFiles: VIDEOS_0806,
+    }),
   },
 ]

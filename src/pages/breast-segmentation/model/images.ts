@@ -21,6 +21,20 @@ const KINETICS_0806 = new Set([1, 2, 6, 7, 10])
 /** Кейсы, для которых есть {N}_kinetics.png в 26.06 */
 const KINETICS_2606 = new Set([1, 3, 7, 8])
 
+/** Имена видео в public/breast-segmentation/26.06/{N}/ */
+const VIDEOS_2606: Record<number, string> = {
+  1: "1_screen.mp4",
+  2: "2_screen.mp4",
+  3: "3_screen.mp4",
+  4: "4_screen.mp4",
+  5: "5_screen.mp4",
+  6: "6_screen.mp4",
+  7: "7_screen.mp4",
+  8: "8_screen.mp4",
+  9: "9_screen.mp4",
+  10: "10_screen.mp4",
+}
+
 /** Имена .mov в public/breast-segmentation/08.06/{N}/ */
 const VIDEOS_0806: Record<number, string> = {
   1: "Запись экрана 2026-06-09 в 11.39.00.mov",
@@ -85,6 +99,7 @@ export const breastSegmentationBatches: BreastSegmentationBatch[] = [
     studies: nestedStudiesForFolder("26.06", {
       mediaFolder: "26.06",
       kineticsStudyIds: KINETICS_2606,
+      videoFiles: VIDEOS_2606,
       doctorTexts: doctorTexts2606,
     }),
   },

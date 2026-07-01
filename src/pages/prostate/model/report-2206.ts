@@ -40,7 +40,7 @@ function makeRtStudy(id: number): Study {
 
 export const report2206: Report = {
   id: "22-06",
-  label: "Результаты (22.06)",
+  label: "Результаты (22.06) - эвристика",
   hideModelConclusion: true,
   sections: [
     {

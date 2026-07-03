@@ -158,29 +158,6 @@ function SegmentationViewer({ study }: { study: BreastSegmentationStudy }) {
         </section>
       ) : null}
 
-      <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
-        <div className="mb-3 text-sm text-slate-300">
-          Кадр: <span className="font-semibold text-white">Очаги</span>
-        </div>
-        <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
-          <ImageMagnifier src={study.overlayImage} alt="Очаги" />
-        </div>
-      </div>
-
-      {study.kineticsImage ? (
-        <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
-          <div className="mb-3 text-sm text-slate-300">
-            <span className="font-semibold text-white">Кинетические кривые</span>
-          </div>
-          <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
-            <ImageMagnifier
-              src={study.kineticsImage}
-              alt="Кинетические кривые"
-            />
-          </div>
-
-        </div>
-      ) : null}
 
       {study.videoSrc ? (
         <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
@@ -197,6 +174,30 @@ function SegmentationViewer({ study }: { study: BreastSegmentationStudy }) {
           />
         </div>
       ) : null}
+
+      {study.kineticsImage ? (
+        <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
+          <div className="mb-3 text-sm text-slate-300">
+            <span className="font-semibold text-white">Кинетические кривые</span>
+          </div>
+          <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
+            <ImageMagnifier
+              src={study.kineticsImage}
+              alt="Кинетические кривые"
+            />
+          </div>
+
+        </div>
+      ) : null}
+      <div className="min-w-0 overflow-hidden rounded-xl border bg-slate-900 p-4 sm:p-5">
+        <div className="mb-3 text-sm text-slate-300">
+          Кадр: <span className="font-semibold text-white">Очаги</span>
+        </div>
+        <div className="flex max-h-[min(65dvh,560px)] min-h-0 items-center justify-center overflow-hidden rounded-lg bg-slate-950">
+          <ImageMagnifier src={study.overlayImage} alt="Очаги" />
+        </div>
+      </div>
+
     </div>
   )
 }

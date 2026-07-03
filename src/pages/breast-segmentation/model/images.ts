@@ -95,7 +95,7 @@ function nestedStudiesForFolder(
 export const breastSegmentationBatches: BreastSegmentationBatch[] = [
   {
     id: "26-06",
-    label: "Результаты (26.06) - новые кейсы",
+    label: "Результаты (26.06) - с закл.врача",
     studies: nestedStudiesForFolder("26.06", {
       mediaFolder: "26.06",
       kineticsStudyIds: KINETICS_2606,
@@ -105,19 +105,19 @@ export const breastSegmentationBatches: BreastSegmentationBatch[] = [
   },
   {
     id: "15-06",
-    label: "Результаты (15.06)",
+    label: "Результаты (15.06) - без закл. врача",
     studies: nestedStudiesForFolder("15.06", {
       mediaFolder: "08.06",
       kineticsStudyIds: KINETICS_0806,
       videoFiles: VIDEOS_0806,
     }),
   },
-  {
-    id: "08-06",
-    label: "Результаты (08.06)",
-    studies: nestedStudiesForFolder("08.06", {
-      kineticsStudyIds: KINETICS_0806,
-      videoFiles: VIDEOS_0806,
-    }),
-  },
+  // {
+  //   id: "08-06",
+  //   label: "Результаты (08.06)",
+  //   studies: nestedStudiesForFolder("08.06", {
+  //     kineticsStudyIds: KINETICS_0806,
+  //     videoFiles: VIDEOS_0806,
+  //   }),
+  // },
 ]

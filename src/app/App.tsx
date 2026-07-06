@@ -38,7 +38,7 @@ function App() {
               }
             />
             <Route
-              path="/breast-segmentation"
+              path="/breast"
               element={
                 <BreastSegmentation />
               }

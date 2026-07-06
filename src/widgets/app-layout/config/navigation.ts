@@ -34,8 +34,8 @@ export const appNavigation: AppNavigationItem[] = [
   },
   {
     icon: navIcon,
-    title: "Сегментация молочной железы",
-    href: "/breast-segmentation",
+    title: "Молочная железа",
+    href: "/breast",
     requiresAuth: false,
   },
   {

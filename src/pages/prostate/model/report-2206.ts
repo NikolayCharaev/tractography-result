@@ -1,3 +1,4 @@
+import { prostate1106Images } from "./report-1106"
 import { doctorTexts } from "./doctor-texts"
 import { ronixDoctorTexts } from "./ronix-doctor-texts"
 import type { EmptyConclusion, Report, Study, StudyImages } from "./types"
@@ -21,26 +22,42 @@ function prostate2206Images(variant: "new" | "old", studyId: number): StudyImage
 function makeRonixStudy(id: number): Study {
   return {
     id,
+    primaryLabel: "Эвристика",
     modelConclusion: emptyModelConclusion(),
     doctorText: ronixDoctorTexts[id] ?? "",
     images: prostate2206Images("new", id),
     imagesPanelTitle: "Срезы с очагами и кинетика",
+    comparison: {
+      label: "Picai",
+      modelConclusion: emptyModelConclusion(),
+      images: prostate1106Images("new", id),
+      imagesPanelTitle: "Срезы с очагами и кинетика",
+      hideModelConclusion: true,
+    },
   }
 }
 
 function makeRtStudy(id: number): Study {
   return {
     id,
+    primaryLabel: "Эвристика",
     modelConclusion: emptyModelConclusion(),
     doctorText: doctorTexts[id] ?? "",
     images: prostate2206Images("old", id),
     imagesPanelTitle: "Срезы с очагами и кинетика",
+    comparison: {
+      label: "Picai",
+      modelConclusion: emptyModelConclusion(),
+      images: prostate1106Images("old", id),
+      imagesPanelTitle: "Срезы с очагами и кинетика",
+      hideModelConclusion: true,
+    },
   }
 }
 
 export const report2206: Report = {
   id: "22-06",
-  label: "Результаты (22.06) - эвристика",
+  label: "Результаты (22.06)",
   hideModelConclusion: true,
   sections: [
     {

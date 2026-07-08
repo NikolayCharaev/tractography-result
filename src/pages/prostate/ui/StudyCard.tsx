@@ -1,4 +1,5 @@
-import type { Study, StudyImages } from "../model/types"
+import type { ModelConclusion, Study, StudyImages } from "../model/types"
+import { ImagePreview } from "@/shared/ui/image-preview"
 import { ModelConclusionPanel } from "./ModelConclusionPanel"
 import { SliceThumb } from "./SliceThumb"
 
@@ -15,6 +16,16 @@ export function StudyCard({
   doctorPanelTitle,
   hideModelConclusion = false,
 }: StudyCardProps) {
+  if (study.comparison) {
+    return (
+      <ComparisonStudyCard
+        study={study}
+        modelPanelTitle={modelPanelTitle}
+        doctorPanelTitle={doctorPanelTitle}
+      />
+    )
+  }
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
       <header className="mb-4 flex items-center justify-between gap-3">
@@ -52,6 +63,96 @@ export function StudyCard({
       ) : null}
     </article>
   )
+}
+
+function ComparisonStudyCard({
+  study,
+  modelPanelTitle,
+  doctorPanelTitle,
+}: {
+  study: Study
+  modelPanelTitle: string
+  doctorPanelTitle: string
+}) {
+  const comparison = study.comparison!
+
+  return (
+    <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <header className="mb-4 flex items-center justify-between gap-3">
+        <h3 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+          Исследование {study.id}
+        </h3>
+      </header>
+
+      <Panel title={doctorPanelTitle}>
+        <p className="whitespace-pre-wrap break-words text-sm leading-relaxed text-slate-700">
+          {study.doctorText}
+        </p>
+      </Panel>
+
+      <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <MethodColumn
+          label={study.primaryLabel ?? "Эвристика"}
+          modelPanelTitle={modelPanelTitle}
+          modelConclusion={study.modelConclusion}
+          images={study.images}
+          imagesPanelTitle={study.imagesPanelTitle}
+          hideModelConclusion
+        />
+        <MethodColumn
+          label={comparison.label}
+          modelPanelTitle={comparison.modelPanelTitle ?? modelPanelTitle}
+          modelConclusion={comparison.modelConclusion}
+          images={comparison.images}
+          imagesPanelTitle={comparison.imagesPanelTitle}
+          hideModelConclusion={comparison.hideModelConclusion}
+        />
+      </div>
+    </article>
+  )
+}
+
+function MethodColumn({
+  label,
+  modelPanelTitle,
+  modelConclusion,
+  images,
+  imagesPanelTitle,
+  hideModelConclusion = false,
+}: {
+  label: string
+  modelPanelTitle: string
+  modelConclusion: ModelConclusion
+  images: StudyImages
+  imagesPanelTitle?: string
+  hideModelConclusion?: boolean
+}) {
+  const showModelConclusion =
+    !hideModelConclusion && !isHiddenEmptyConclusion(modelConclusion)
+
+  return (
+    <section className="rounded-xl border border-slate-200 bg-slate-50/50 p-4">
+      <h4 className="mb-3 text-base font-semibold text-slate-900">{label}</h4>
+
+      <div className="flex flex-col gap-4">
+        {showModelConclusion ? (
+          <Panel title={modelPanelTitle}>
+            <ModelConclusionPanel conclusion={modelConclusion} />
+          </Panel>
+        ) : null}
+
+        {images.kind !== "none" ? (
+          <Panel title={imagesPanelTitle ?? "Изображения срезов"}>
+            <ImagesContent images={images} />
+          </Panel>
+        ) : null}
+      </div>
+    </section>
+  )
+}
+
+function isHiddenEmptyConclusion(conclusion: ModelConclusion): boolean {
+  return conclusion.kind === "empty" && conclusion.description === ""
 }
 
 function Panel({
@@ -145,19 +246,12 @@ function OverviewImage({
           {label}
         </figcaption>
       ) : null}
-      <a
-        href={src}
-        target="_blank"
-        rel="noreferrer"
-        className="block overflow-hidden rounded-xl border border-slate-200 bg-slate-900 no-underline hover:border-slate-300"
-      >
-        <img
-          src={src}
-          alt={alt}
-          className="max-h-[min(70vh,720px)] w-full object-contain"
-          loading="lazy"
-        />
-      </a>
+      <ImagePreview
+        src={src}
+        alt={alt}
+        triggerClassName="rounded-xl border border-slate-200 hover:border-slate-300"
+        imageClassName="max-h-[min(70vh,720px)] w-full object-contain"
+      />
     </figure>
   )
 }

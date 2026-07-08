@@ -6,7 +6,7 @@ const RONIX_STUDY_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
 const RT_STUDY_IDS = [1, 2, 3, 4, 5, 6, 7, 9] as const
 
 /** Данные собраны из `public/prostate/11.06/{new|old}/<id>/visualizations/lesions_summary.json` и `lesion_001.json`. */
-const conclusionsRonix: Record<number, ModelConclusion> = {
+export const conclusionsRonix1106: Record<number, ModelConclusion> = {
   1: {
     kind: "structured",
     summary: "Клинически значимый очаг присутствует",
@@ -116,7 +116,7 @@ const conclusionsRonix: Record<number, ModelConclusion> = {
   },
 }
 
-const conclusionsRt: Record<number, ModelConclusion> = {
+export const conclusionsRt1106: Record<number, ModelConclusion> = {
   1: {
     kind: "structured",
     summary: "По данным экспорта значимых очагов не обнаружено.",
@@ -200,7 +200,7 @@ const conclusionsRt: Record<number, ModelConclusion> = {
   },
 }
 
-function prostate1106Images(variant: "new" | "old", studyId: number): StudyImages {
+export function prostate1106Images(variant: "new" | "old", studyId: number): StudyImages {
   return {
     kind: "overview",
     src: `/prostate/11.06/${variant}/${studyId}/visualizations/result_lesion_slices.png`,
@@ -211,7 +211,7 @@ function prostate1106Images(variant: "new" | "old", studyId: number): StudyImage
 function makeRonixStudy(id: number): Study {
   return {
     id,
-    modelConclusion: conclusionsRonix[id]!,
+    modelConclusion: conclusionsRonix1106[id]!,
     doctorText: ronixDoctorTexts[id] ?? "",
     images: prostate1106Images("new", id),
     imagesPanelTitle: "Срезы с очагами и кинетика",
@@ -221,7 +221,7 @@ function makeRonixStudy(id: number): Study {
 function makeRtStudy(id: number): Study {
   return {
     id,
-    modelConclusion: conclusionsRt[id]!,
+    modelConclusion: conclusionsRt1106[id]!,
     doctorText: doctorTexts[id] ?? "",
     images: prostate1106Images("old", id),
     imagesPanelTitle: "Срезы с очагами и кинетика",

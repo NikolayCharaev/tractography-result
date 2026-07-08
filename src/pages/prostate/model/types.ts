@@ -65,12 +65,26 @@ export type ReportSection = {
   studies: Study[]
 }
 
+/** Дополнительный метод анализа (например Picai рядом с эвристикой). */
+export type StudyMethodComparison = {
+  label: string
+  modelConclusion: ModelConclusion
+  images: StudyImages
+  imagesPanelTitle?: string
+  modelPanelTitle?: string
+  hideModelConclusion?: boolean
+}
+
 export type Study = {
   id: number
   modelConclusion: ModelConclusion
   doctorText: string
   images: StudyImages
   imagesPanelTitle?: string
+  /** Подпись основного метода при сравнении (например «Эвристика»). */
+  primaryLabel?: string
+  /** Второй метод справа (например Picai). */
+  comparison?: StudyMethodComparison
 }
 
 export type Report = {

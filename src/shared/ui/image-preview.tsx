@@ -7,6 +7,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/shared/ui/dialog"
+import { ImageMagnifier } from "@/shared/ui/image-magnifier"
 
 type ImagePreviewProps = {
   src: string
@@ -62,10 +63,13 @@ export function ImagePreview({
           )}
         >
           <DialogTitle className="sr-only">{alt}</DialogTitle>
-          <img
+          <ImageMagnifier
             src={src}
             alt={alt}
-            className="h-full w-full object-contain p-4 pt-14"
+            zoom={3}
+            lensSize={220}
+            className="flex h-full w-full cursor-crosshair items-center justify-center p-4 pt-14"
+            imageClassName="max-h-full max-w-full object-contain"
           />
         </DialogContent>
       </Dialog>

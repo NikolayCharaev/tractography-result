@@ -38,17 +38,19 @@ function makeRonixStudy(id: number): Study {
 }
 
 function makeRtStudy(id: number): Study {
+  const heuristicImages = prostate2206Images("old", id)
+
   return {
     id,
     primaryLabel: "Эвристика",
     modelConclusion: emptyModelConclusion(),
     doctorText: doctorTexts[id] ?? "",
-    images: prostate2206Images("old", id),
+    images: heuristicImages,
     imagesPanelTitle: "Срезы с очагами и кинетика",
     comparison: {
       label: "Picai",
       modelConclusion: emptyModelConclusion(),
-      images: prostate1106Images("old", id),
+      images: id === 3 ? heuristicImages : prostate1106Images("old", id),
       imagesPanelTitle: "Срезы с очагами и кинетика",
       hideModelConclusion: true,
     },

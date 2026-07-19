@@ -3,6 +3,7 @@ import { report0306 } from './report-0306';
 import { report0406 } from './report-0406';
 import { report1106 } from './report-1106';
 import { report1007 } from './report-1007';
+import { report1707 } from './report-1707';
 import { report2206 } from './report-2206';
 import type {
   EmptyConclusion,
@@ -1171,6 +1172,7 @@ const reportLegacy: Report = {
 };
 
 export const prostateReports: Report[] = [
+  report1707,
   report1007,
   report2206,
   report1106,

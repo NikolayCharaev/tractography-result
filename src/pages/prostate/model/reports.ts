@@ -6,6 +6,7 @@ import { report1007 } from './report-1007';
 import { report1707 } from './report-1707';
 import { report2807 } from './report-2807';
 import { report2206 } from './report-2206';
+import { report0708 } from './report-0708';
 import type {
   EmptyConclusion,
   LegacyConclusion,
@@ -1173,6 +1174,7 @@ const reportLegacy: Report = {
 };
 
 export const prostateReports: Report[] = [
+  report0708,
   report2807,
   report1707,
   report1007,

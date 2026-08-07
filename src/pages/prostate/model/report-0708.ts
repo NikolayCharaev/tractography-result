@@ -9,11 +9,15 @@ function emptyModelConclusion(): EmptyConclusion {
   return { kind: "empty", description: "" }
 }
 
-/** Изображения из public/prostate/07.08: `new` — Ronix, `old` — RT. */
+/**
+ * Для 07.08 overview-картинки корректные, а `result_lesion_slices.png`
+ * пришли с агрессивным кропом. Для тех же study id используем нормально
+ * сформированные срезы из 28.07, пока 07.08 не будут перегенерированы.
+ */
 function prostate0708Images(variant: "new" | "old", studyId: number): StudyImages {
   return {
     kind: "overview",
-    src: `/prostate/07.08/${variant}/${studyId}/result_lesion_slices.png`,
+    src: `/prostate/28.07/${variant}/${studyId}/result_lesion_slices.png`,
     kineticCurvesSrc: `/prostate/07.08/${variant}/${studyId}/result_overview.png`,
   }
 }

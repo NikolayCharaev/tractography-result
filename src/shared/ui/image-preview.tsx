@@ -68,8 +68,8 @@ export function ImagePreview({
             alt={alt}
             zoom={3}
             lensSize={220}
-            className="flex h-full w-full cursor-crosshair items-center justify-center p-4 pt-14"
-            imageClassName="max-h-full max-w-full object-contain"
+            className="flex h-full w-full cursor-crosshair items-center justify-center overflow-auto p-4 pt-14"
+            imageClassName="max-h-[calc(100dvh-4.5rem)] max-w-full object-contain"
           />
         </DialogContent>
       </Dialog>
